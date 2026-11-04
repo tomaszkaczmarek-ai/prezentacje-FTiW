@@ -1,0 +1,13 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="328" height="192"
+  viewBox="0 0 328 192"
+  fill="none"
+  stroke="#112E17"
+  stroke-width="4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8 96 Q164 96 164 176" />
+  <path d="M148 164 L164 184 L180 164" />
+</svg>
