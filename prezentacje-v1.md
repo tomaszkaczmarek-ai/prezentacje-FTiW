@@ -2,7 +2,7 @@
 
 meta/wersja: **2026-11-05.1**
 
-meta/zmiana: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
+meta/zmiana: Box z logo, Box Liczba szeroki (zamiast pasa przy jednej liczbie), Sekcje w dwóch kolumnach (rola Tekst opisowy), wyśrodkowany tekst w kartach diagramu cyklu, wykres jako obraz skalowany do obszaru. Wcześniej: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
 
 Ten plik jest indeksem i jedynym źródłem zasad oraz tokenów wyglądu (kolory, wymiary, typografia, odstępy). Szablony HTML wzorców są w trzech plikach z sekcji „Pliki wzorców”. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -25,8 +25,9 @@ Każdy slajd źródła klasyfikujesz do jednej roli według sygnałów (liczba i
 | Okładka | pierwszy slajd; tytuł, podtytuł, zdjęcie, logo | Okładka slajdu | szkielet |
 | Przekładka | krótki tytuł rozdziału, zwykle zdjęcie, brak treści, często numer | Przekładka | szkielet |
 | Opis i liczby | 2–3 akapity opisowe i 2–4 liczby; często logo partnera, QR, portret | Układ: Opis funduszu | uklady, elementy |
-| Karty faktów | 2–6 równorzędnych pozycji, każda z krótkim tytułem i opisem (z ikoną lub zdjęciem) | Ikona z opisem; Box Tekst; Kolumna z ikoną i listą | elementy, uklady |
-| Liczby kluczowe | 1–4 liczby z jednostką i opisem | Box Liczba w rzędzie; Pasek wskaźników tylko przy 2 lub więcej | uklady |
+| Karty faktów | 2–6 równorzędnych pozycji, każda z krótkim tytułem i opisem (z ikoną lub zdjęciem) | Ikona z opisem; Box Tekst; Kolumna z ikoną i listą; Box z logo (gdy pozycje mają logo) | elementy, uklady |
+| Tekst opisowy | 2–6 sekcji z nagłówkami i akapitami, bez grafik i liczb | 2–3 sekcje: Sekcja tekstowa w jednej kolumnie; 4–6: Układ: Sekcje w dwóch kolumnach | elementy, uklady |
+| Liczby kluczowe | 1–4 liczby z jednostką i opisem | Box Liczba w rzędzie; Pasek wskaźników tylko przy 2 lub więcej; jedna liczba obok innych boxów: Box Liczba szeroki | uklady |
 | Osoby | zdjęcia osób z imieniem, rolą i opisem | Karta osoby | elementy |
 | Porównanie | kryteria w wierszach, 2 opcje w kolumnach | Tabela porównawcza (z ikoną, jeśli kryteria mają ikony) | uklady |
 | Wyniki i skład | wykres lub seria okresów, lista składników, krótki opis | Tabela wyników, obraz wykresu ze źródła, Wiersz składnika | elementy, uklady |
@@ -44,7 +45,7 @@ Role bez wzorca: patrz „Potrzebne wzorce”.
 1. **Sklasyfikuj każdy slajd źródła do roli** (tabela wyżej). Zapisz listę elementów: rodzaj (tytuł, tekst, obraz, zdjęcie, liczba, tabela, wykres, logo, QR, link), liczbę i kolejność czytania. W pptx odczytaj pozycje (`a:off`, `a:ext` w EMU, rozmiar slajdu z `p:sldSz`, przelicz na 1920×1080), a obrazy z `ppt/media/` przypisuj do slajdów przez `ppt/slides/_rels/slideN.xml.rels`. W PDF lub obrazie opisz strefy z podglądu.
 2. **Wybierz wzorzec roli.** Użyj wzorca domyślnego, jeśli mieszczą się w nim wszystkie elementy. Rozmieszczenie ze źródła traktuj jako wskazówkę: jeśli wzorzec ustawia elementy inaczej, ale zachowuje ich grupowanie i kolejność czytania, to jest w porządku. Jeśli żaden wzorzec nie pasuje, złóż układ z molekuł (elementów) i zgłoś brak wzorca.
 3. **Dobierz molekuły do elementów.** Teksty, liczby i podpisy przepisujesz dosłownie. Jeśli nie mieszczą się w pojemności elementu, bez slajdu źródłowego wybierz układ o większej pojemności, a skracaj dopiero, gdy żaden się nie mieści (z listą skróceń w raporcie). Zdjęcia, logo, QR i inne zasoby ze źródła wgraj do talii i przypisz do miejsc wzorca. Brak zasobu w źródle: puste miejsce lub pominięcie elementu opcjonalnego, z wpisem do raportu; nie dopisuj zdjęć z internetu.
-4. **Przy wątpliwości zapytaj użytkownika, jeśli jest obecny.** Wątpliwość to sytuacja, w której dwa wzorce lub dwa sposoby pokazania elementu są równie dobre albo zmiana ze źródła byłaby istotna (np. zamiana zdjęć na ikony, jeden wskaźnik: pas czy box, tytuł za długi). Zapytaj jednym pytaniem z 2–3 opcjami. Każda opcja ma nazwę, jedno zdanie opisu wyglądu, co użytkownik zyskuje i co traci; opcja domyślna jest oznaczona i pierwsza. Przykład: „Jeden wskaźnik: A) box Liczba wyśrodkowany w rzędzie z kartami (domyślnie; spójny z resztą slajdu, wskaźnik mniej rzuca się w oczy), B) pas na dole slajdu (mocniej wyróżnia liczbę, ale przykleja ją do stopki)”. Pytaj raz na typ decyzji w prezentacji i stosuj odpowiedź do pozostałych takich slajdów. Gdy użytkownika nie ma (praca zaplanowana lub bez odpowiedzi), użyj opcji domyślnej i wpisz decyzję do raportu.
+4. **Przy wątpliwości zapytaj użytkownika, jeśli jest obecny.** Wątpliwość to sytuacja, w której dwa wzorce lub dwa sposoby pokazania elementu są równie dobre albo zmiana ze źródła byłaby istotna (np. zamiana zdjęć na ikony, jeden wskaźnik: pas czy box, tytuł za długi). Zapytaj jednym pytaniem z 2–3 opcjami. Każda opcja ma nazwę, jedno zdanie opisu wyglądu, co użytkownik zyskuje i co traci; opcja domyślna jest oznaczona i pierwsza. Przykład: „Jedna liczba obok kart: A) Box Liczba szeroki pod kartami (domyślnie; liczba jest wyraźna i spójna z kartami), B) box Liczba jako kolejna karta w rzędzie (równy rząd, ale liczba jest mała i traci na wadze)”. Pas wskaźników nie jest opcją przy jednej liczbie. Pytaj raz na typ decyzji w prezentacji i stosuj odpowiedź do pozostałych takich slajdów. Gdy użytkownika nie ma (praca zaplanowana lub bez odpowiedzi), użyj opcji domyślnej i wpisz decyzję do raportu.
 5. **Sugestie.** Jeśli widzisz lepszy sposób pokazania treści (zdjęcia stockowe niosące niewiele treści zamień na ikony; dwa slajdy, które mogłyby być jednym; za długi tytuł), napisz to w raporcie jako propozycję z opisem skutku. Niczego z tego nie rób bez zgody użytkownika.
 6. **Zbuduj slajdy zgodnie z wzorcami i tokenami**, a wzorce pobieraj z plików wskazanych w rolach (sekcja „Pliki wzorców”).
 7. **Raport zgodności:** wersja design systemu, rola i użyty wzorzec każdego slajdu, droga (wzorzec domyślny, złożony z molekuł lub odtworzony ze źródła), elementy źródła, które trafiły na slajd (i te, które nie, z powodem), odstępstwa, sugestie, lista skróceń, brakujące wzorce.
@@ -54,8 +55,8 @@ Role bez wzorca: patrz „Potrzebne wzorce”.
 Pobierz je w kolejności potrzeby (pierwszy zawsze), każdy z kontrolą znacznika „KONIEC PLIKU (meta/wersja …)” na końcu; wszystkie mają tę samą wersję co indeks.
 
 - `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/wzorce-szkielet.md`: rama slajdu treści, nagłówek, stopka, źródło w stopce, stopka z pasem, okładka, przekładka. Potrzebny w każdej prezentacji.
-- `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/wzorce-elementy.md`: atomy (ikony, punktor, „+”, odznaka, karta szklana, ramka zdjęcia), kafelek logo, QR, sekcja tekstowa, portret, molekuły (karta osoby, ikona z opisem, kolumna z ikoną i listą, ściana logo, wiersze, karta wyśrodkowana, łącznik).
-- `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/wzorce-uklady.md`: boxy danych (Liczba, Tekst, Wyliczenie, Wykres, szerokie), tabele, pasek wskaźników, układy: Opis funduszu, Diagram cyklu, Opis i grafika, Grafiki z podpisem.
+- `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/wzorce-elementy.md`: atomy (ikony, punktor, „+”, odznaka, karta szklana, ramka zdjęcia), kafelek logo, QR, sekcja tekstowa, portret, molekuły (karta osoby, ikona z opisem, box z logo, kolumna z ikoną i listą, ściana logo, wiersze, karta wyśrodkowana, łącznik).
+- `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/wzorce-uklady.md`: boxy danych (Liczba, Liczba szeroki, Tekst, Wyliczenie, Wykres, szerokie), tabele, pasek wskaźników, układy: Opis funduszu, Diagram cyklu, Opis i grafika, Grafiki z podpisem, Sekcje w dwóch kolumnach.
 
 Pobieraj tylko te pliki, których wymagają role użyte w prezentacji (kolumna „Pliki” w tabeli ról). Ikony i logo partnerów: adresy w pliku elementów (foldery `ikony/` i `logo-partnerow/`).
 
@@ -63,7 +64,6 @@ Pobieraj tylko te pliki, których wymagają role użyte w prezentacji (kolumna �
 
 Lista prowadzona przez właściciela systemu z raportów użytkowników. Dopóki wzorca nie ma, użyj najbliższego i zgłoś w raporcie.
 
-- Karta z logo partnera (logo, nazwa, krótki opis).
 - Zamknięcie (kontakt, adres www, zdjęcie zespołu).
 
 ## Role kolorów
@@ -177,7 +177,7 @@ W Claude Slides `width` i `height` obejmują padding i ramkę (potwierdzone na w
 ## Zdjęcia i wykresy
 
 - **Zdjęcia w tle** tylko na okładce i przekładkach. Na pozostałych slajdach tylko na wyraźną prośbę osoby tworzącej prezentację i tylko z plików wystarczającej jakości (w pełnym rozmiarze slajdu min. 1920 px szerokości). Jeśli plik jest za mały, zgłoś to w raporcie i użyj gładkiego tła.
-- **Wykresy i diagramy złożone nie są odrysowywane.** Wykres ze źródła wstaw jako obraz ze źródła, w ramce o stałych wymiarach, bez przeróbki danych i kolorów, i wpisz to do raportu. Wyjątek: struktura procentowa o kilku wartościach (box Wykres lub wykres poziomy), gdy liczby są podane w tekście źródła i skill przepisuje je dosłownie.
+- **Wykresy i diagramy złożone nie są odrysowywane.** Wykres ze źródła wstaw jako obraz ze źródła, bez przeróbki danych i kolorów, i wpisz to do raportu. Skaluj go do największego rozmiaru, który mieści się w obszarze treści 1664×616 (z podpisem pod spodem 1664×560) z zachowaniem proporcji, i wyśrodkuj; nie zostawiaj wąskiego wykresu na środku pustego slajdu. Wyjątek: struktura procentowa o kilku wartościach (box Wykres lub wykres poziomy), gdy liczby są podane w tekście źródła i skill przepisuje je dosłownie.
 
 
 ---

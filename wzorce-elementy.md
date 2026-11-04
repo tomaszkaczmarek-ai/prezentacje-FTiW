@@ -181,6 +181,20 @@ Kiedy: pojedyncza cecha, korzyść lub krok. Pola: ikona (z sekcji Atomy → Iko
 
 Pojemność w rzędzie po 3 (padding 40): tytuł 26 znaków w linii, opis 32 znaki w linii. Dwa rzędy po 3 (6 pozycji): tytuł 1 linia, opis do 2 linii (ok. 64 znaków); wysokość boxu ok. 286, dwa rzędy z odstępem 32 ok. 604. Jeden rząd po 3: tytuł do 2 linii, opis do 5 linii (ok. 160 znaków). Rząd po 4 (padding 32): tytuł 19 znaków w linii, opis 23 znaki w linii, tytuł do 2 linii, opis do 4 linii.
 
+### Box z logo
+
+Kiedy: podmiot, partner lub produkt, który ma logo (spółki grupy, partnerzy, fundusze). Pola: logo (biblioteka partnerów lub plik od użytkownika), tytuł (nazwa), opcjonalnie opis i dodatkowy znak (np. drugie małe logo). Logo stoi na białym kafelku u góry boxu; kafelek ma wysokość 96 i szerokość boxu, logo 240×64 (contain). Boxy w rzędzie mają jednakową wysokość.
+
+```html
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:32px">
+<div style="height:96px;display:flex;flex-direction:row;align-items:center;justify-content:center;background:[[tlo/kafelek-logo]];border-radius:14px"><img src="{logo}" alt="{nazwa}" style="width:240px;height:64px;object-fit:contain"></div>
+<p style="font-size:30px;font-weight:700;line-height:1.2;color:[[tekst/tytul]]">{tytuł}</p>
+<p style="font-size:26px;line-height:1.35;color:[[tekst/podstawowy]]">{opis}</p>
+</div>
+```
+
+Pojemność w rzędzie po 4 (wewnętrzna szerokość 328): tytuł 19 znaków w linii, do 3 linii; opis 23 znaki w linii, do 4 linii. Po 3 (padding 40 zamiast 32): tytuł 26 znaków, opis 32. Brak opisu: pomiń drugi akapit. Dodatkowy znak (np. logo giełdy z krótkim podpisem) wstaw pod opisem jako wiersz: kafelek logo 160×48 plus tekst 24 px.
+
 ### Kolumna z ikoną i listą
 
 Kiedy: kategoria z kilkoma punktami (np. obszary usług, zalety). Pola: ikona, tytuł, 2–5 pozycji listy. Pozycja ma do 2 linii.

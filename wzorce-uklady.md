@@ -25,6 +25,18 @@ Kiedy: Jedna kluczowa liczba z jednostką i jednozdaniowym opisem. gap 20, paddi
 <p style="font-size:26px;line-height:1.4;color:[[tekst/podstawowy]]">{opis}</p>
 ```
 
+### Box danych – Typ=Liczba szeroki
+
+Kiedy: jedna kluczowa liczba na slajdzie z innymi boxami (np. pod rzędem kart), gdy w rzędzie nie ma na nią miejsca. Liczba i jednostka po lewej, pionowa kreska, jednozdaniowy opis po prawej (do 2 linii, ok. 90 znaków). Box na całą szerokość obszaru treści (1664), wysokość ok. 131. Zastępuje pas wskaźników przy jednej liczbie.
+
+```html
+<div style="display:flex;flex-direction:row;align-items:center;gap:32px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:24px 40px">
+<div style="display:flex;flex-direction:row;align-items:baseline;gap:12px"><p style="font-size:72px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{jednostka}</p></div>
+<div style="width:1px;align-self:stretch;background:[[linia/karta]]"></div>
+<p style="flex:1;font-size:26px;line-height:1.35;color:[[tekst/podstawowy]]">{opis}</p>
+</div>
+```
+
 ### Box danych – Typ=Tekst
 
 Kiedy: Krótki opis z etykietą, do ok. 250 znaków. gap 8, padding 32px 40px.
@@ -116,7 +128,7 @@ Kiedy: kryterium tabeli ma ikonę (np. koszty, płynność, bezpieczeństwo). Ik
 
 ### Pasek wskaźników
 
-Kiedy: 2–4 kluczowe liczby w jednym pasie na całą szerokość. Pierwsza kolumna używa szablonu „kolumna pierwsza”, kolejne „kolumna kolejna” (z pionowym separatorem). `{waga}` to szerokość kolumny względem pozostałych (domyślnie 1; kolumna z dłuższym opisem 1.3–2). Opis wskaźnika: maks. 2 linie (ok. 45 znaków w kolumnie wagi 1, ok. 90 w wagi 2). Jednostka krótka (SRI, %, miesięcy).
+Kiedy: 2–4 kluczowe liczby w jednym pasie na całą szerokość. Przy jednej liczbie nie używaj pasa: użyj „Box danych – Typ=Liczba” w rzędzie lub „Typ=Liczba szeroki”. Pierwsza kolumna używa szablonu „kolumna pierwsza”, kolejne „kolumna kolejna” (z pionowym separatorem). `{waga}` to szerokość kolumny względem pozostałych (domyślnie 1; kolumna z dłuższym opisem 1.3–2). Opis wskaźnika: maks. 2 linie (ok. 45 znaków w kolumnie wagi 1, ok. 90 w wagi 2). Jednostka krótka (SRI, %, miesięcy).
 
 ```html
 <div style="position:absolute;left:0px;top:788px;width:1920px;height:176px;background:[[tlo/pasek-wskaznikow]];display:flex;flex-direction:row;justify-content:center"><div style="width:1664px;height:176px;display:flex;flex-direction:row">
@@ -157,16 +169,16 @@ Diagram to siatka 3×3: trzy kolumny po 328 i odstęp 16 (razem 1016), narożnik
 </div>
 ```
 
-Karta etapu (328 szerokości, wiersz 192, treść wyśrodkowana w pionie; kolejność wiersza środkowego: etap 4 po lewej, środek, etap 2 po prawej):
+Karta etapu (328 szerokości, tekst wyśrodkowany w poziomie i w pionie, wiersz 192, treść wyśrodkowana w pionie; kolejność wiersza środkowego: etap 4 po lewej, środek, etap 2 po prawej):
 
 ```html
-<div style="width:328px;display:flex;flex-direction:row;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px"><div style="width:24px"></div><div style="width:280px;display:flex;flex-direction:column;justify-content:center;gap:8px"><p style="font-size:30px;font-weight:700;line-height:1.2;color:[[tekst/tytul]]">{tytuł}</p><p style="font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{opis}</p></div><div style="width:24px"></div></div>
+<div style="width:328px;display:flex;flex-direction:row;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px"><div style="width:24px"></div><div style="width:280px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px"><p style="font-size:30px;font-weight:700;line-height:1.2;text-align:center;color:[[tekst/tytul]]">{tytuł}</p><p style="font-size:24px;line-height:1.35;text-align:center;color:[[tekst/podstawowy]]">{opis}</p></div><div style="width:24px"></div></div>
 ```
 
 Karta środka (tło limonkowe, tekst ciemny, bez górnej kreski):
 
 ```html
-<div style="width:328px;display:flex;flex-direction:row;background:[[akcent/glowny]];border-radius:40px"><div style="width:24px"></div><div style="width:280px;display:flex;flex-direction:column;justify-content:center;gap:8px"><p style="font-size:30px;font-weight:700;line-height:1.2;color:[[tekst/na-limonce]]">{tytuł}</p><p style="font-size:24px;line-height:1.35;color:[[tekst/na-limonce]]">{opis}</p></div><div style="width:24px"></div></div>
+<div style="width:328px;display:flex;flex-direction:row;background:[[akcent/glowny]];border-radius:40px"><div style="width:24px"></div><div style="width:280px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px"><p style="font-size:30px;font-weight:700;line-height:1.2;text-align:center;color:[[tekst/na-limonce]]">{tytuł}</p><p style="font-size:24px;line-height:1.35;text-align:center;color:[[tekst/na-limonce]]">{opis}</p></div><div style="width:24px"></div></div>
 ```
 
 Komórka łącznika (plik z biblioteki, limonka, 328×192):
@@ -212,6 +224,21 @@ Kolumna (szer = 816 lub 533):
 ```
 
 Pojemność: tytuł podpisu 1 linia (2 grafiki ok. 59 znaków, 3 grafiki ok. 38), opis 2 linie (2 grafiki po 64 znaki, 3 grafiki po 41 znaków).
+
+### Układ: Sekcje w dwóch kolumnach
+
+Kiedy: 4–6 sekcji tekstowych z nagłówkami, bez grafik i liczb (opis oferty, zasad, zespołu). Przy 2–3 sekcjach użyj „Sekcja tekstowa” w jednej kolumnie. Kolejność czytania: lewa kolumna od góry, potem prawa. Podział: zachowaj kolejność i podziel sekcje tak, by kolumny miały zbliżoną wysokość (przy nieparzystej liczbie lewa ma więcej sekcji lub dłuższe teksty tak, by różnica wysokości była najmniejsza). Pojemność kolumny 816: ok. 64 znaków w linii, do 3 sekcji, akapit do 4 linii (ok. 250 znaków). Blok wyśrodkuj w pionie, gdy jest niższy niż 70% obszaru (sekcja „Odstępy i obszar treści”), inaczej od góry.
+
+```html
+<div style="position:absolute;left:128px;top:304px;width:1664px;height:616px;display:flex;flex-direction:column;justify-content:{center albo flex-start}">
+<div style="display:flex;flex-direction:row;align-items:flex-start;gap:32px">
+<div style="width:816px;display:flex;flex-direction:column;gap:20px">{SEKCJE LEWEJ KOLUMNY}</div>
+<div style="width:816px;display:flex;flex-direction:column;gap:20px">{SEKCJE PRAWEJ KOLUMNY}</div>
+</div>
+</div>
+```
+
+Sekcja: szablon z „Sekcja tekstowa” (plik elementów).
 
 ---
 
