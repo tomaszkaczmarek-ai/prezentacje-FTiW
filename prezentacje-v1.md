@@ -1,8 +1,8 @@
 # Design system prezentacji
 
-meta/wersja: **2026-11-04.1**
+meta/wersja: **2026-11-04.2**
 
-meta/zmiana: Dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
+meta/zmiana: Dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
 
 Źródło wartości: plik projektowy właściciela (Figma). Ten plik jest odczytywalną kopią dla skilla do prezentacji. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -285,6 +285,14 @@ Kiedy: dużo tekstu opisowego (2–3 sekcje, do ok. 1000 znaków) plus 2–4 wsk
 - **Nic nie ginie:** każdy element źródła (zdjęcie, QR, link, logo, podpis) musi dostać miejsce na slajdzie. Jeśli żaden układ nie ma na niego miejsca, zgłoś to użytkownikowi przed budową slajdu, zamiast go pomijać.
 - **Układ dobieraj do treści, nie treść do układu.** Nie skracaj tekstu tylko dlatego, że wybrany układ jest za ciasny; wybierz układ o większej pojemności.
 
+## 6. Zasoby ze źródła i mapowanie slajdów
+
+- **Jeden slajd źródła = jeden slajd wyniku.** Nie dziel slajdu na dwa i nie łącz dwóch w jeden bez wyraźnej prośby użytkownika. Jeśli treść nie mieści się w żadnym układzie, zgłoś to i zapytaj, zamiast dzielić.
+- **Zasoby graficzne bierz ze źródła, nie rezygnuj z nich.** Gdy użytkownik załączył prezentację (.pptx): rozpakuj plik (to archiwum zip), obrazy są w `ppt/media/`, a które należą do danego slajdu, wskazuje `ppt/slides/_rels/slideN.xml.rels`. Zdjęcia, logo, kody QR i portrety przypisz do miejsc układu (kafelek logo partnera, QR, portret) i wgraj do talii. Pliki SVG i PNG są dopuszczalne.
+- **Brak zasobu w źródle:** zostaw w układzie wyraźne puste miejsce lub pomiń element opcjonalny, ale zgłoś to w raporcie. Nie dopisuj zdjęć z internetu.
+- **Raport musi wymieniać:** które elementy źródła (zdjęcie, QR, link, logo, podpis) trafiły na slajd, a które nie i dlaczego.
+- **Struktura procentowa to wykres.** Udziały procentowe (np. struktura portfela) pokaż jako box Wykres lub wykres poziomy, a nie jako zdanie w boxie Tekst.
+
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-04.1)
+KONIEC PLIKU (meta/wersja 2026-11-04.2)
