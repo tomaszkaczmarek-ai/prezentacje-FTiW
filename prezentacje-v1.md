@@ -1,8 +1,8 @@
 # Design system prezentacji
 
-meta/wersja: **2026-11-04.2**
+meta/wersja: **2026-11-04.3**
 
-meta/zmiana: Dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
+meta/zmiana: Dodana zasada „Układ ze źródła” (pierwszeństwo przed doborem układu, gdy użytkownik załączył slajd źródłowy). Wcześniej: dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
 
 Źródło wartości: plik projektowy właściciela (Figma). Ten plik jest odczytywalną kopią dla skilla do prezentacji. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -293,6 +293,16 @@ Kiedy: dużo tekstu opisowego (2–3 sekcje, do ok. 1000 znaków) plus 2–4 wsk
 - **Raport musi wymieniać:** które elementy źródła (zdjęcie, QR, link, logo, podpis) trafiły na slajd, a które nie i dlaczego.
 - **Struktura procentowa to wykres.** Udziały procentowe (np. struktura portfela) pokaż jako box Wykres lub wykres poziomy, a nie jako zdanie w boxie Tekst.
 
+## 7. Układ ze źródła (ma pierwszeństwo przed sekcją 5)
+
+Gdy użytkownik załączył slajd źródłowy (.pptx, PDF, obraz), ma dostać slajd o tym samym układzie, który sobie wymyślił, w naszej szacie graficznej. Wygląd (kolory, fonty, elementy) bierzesz z systemu, a **rozmieszczenie elementów ze źródła**. Sekcja 5 „Dobór układu” obowiązuje tylko wtedy, gdy nie ma slajdu źródłowego.
+
+1. **Odczytaj układ źródła.** W pptx odczytaj pozycje i rozmiary kształtów slajdu (`a:off`, `a:ext` w EMU; rozmiar slajdu w `ppt/presentation.xml`, `p:sldSz`) i przelicz na płótno 1920×1080 (x_px = x_EMU / szerokość_slajdu_EMU × 1920, analogicznie y). W PDF lub obrazie opisz strefy z podglądu. Zapisz listę elementów: rodzaj (tytuł, tekst, obraz, liczba, tabela, wykres), strefa i kolejność czytania.
+2. **Sprawdź, czy pasuje programowany układ.** Układ z tego pliku (np. „Opis funduszu”, siatka kart, tabela) jest użyteczny tylko wtedy, gdy (a) każdy element źródła ma w nim miejsce i (b) rozmieszczenie stref jest takie samo jak w źródle (te same grupy w tych samych częściach slajdu). Jeśli tak, użyj go i wypełnij pola.
+3. **Jeśli nie pasuje, odtwórz układ ze źródła.** Zachowaj strefy, ich kolejność, grupowanie i proporcje z źródła. Zrób to elementami z tego pliku (kafelek logo, box danych, sekcja tekstowa, wykres, tabela, pas wskaźników) w ich rozmiarach i stylach, a brakujące elementy jako zwykłe bloki tekstu w stylach ze skali typografii. Pozycje dopasuj do marginesów 128 px (boki, góra) i 160 px (dół) oraz do odstępów systemu.
+4. **Czego nie wolno bez prośby użytkownika:** dzielić slajdu na dwa, łączyć dwóch w jeden, przenosić elementu do innej strefy, zmieniać kolejności, zamieniać typu elementu (np. liczba ze źródła w kartę tekstową, tekst ze wskaźnikami w tabelę). Jeśli element ze źródła nie mieści się w układzie (np. za długi tekst), najpierw skróć tekst, nie zmieniaj układu; jeśli to nie wystarcza, zapytaj.
+5. **Raport:** napisz, którą drogą poszedłeś (programowany układ albo odtworzenie ze źródła) i wymień odstępstwa od źródła (przesunięte elementy, skrócone teksty, brakujące zasoby).
+
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-04.2)
+KONIEC PLIKU (meta/wersja 2026-11-04.3)
