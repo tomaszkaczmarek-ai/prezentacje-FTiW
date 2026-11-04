@@ -2,7 +2,7 @@
 
 meta/wersja: **2026-11-05.1**
 
-meta/zmiana: Niepełny ostatni rząd boxów o tej samej szerokości i wyśrodkowany; Rząd z „+” bez opisów w źródle zostaje z małymi kartami. Wcześniej: Box z logo, Box Liczba szeroki (zamiast pasa przy jednej liczbie), Sekcje w dwóch kolumnach (rola Tekst opisowy), wyśrodkowany tekst w kartach diagramu cyklu, wykres jako obraz skalowany do obszaru. Wcześniej: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
+meta/zmiana: Przekładka z równą ciemną warstwą na zdjęciu (tlo/przekladka). Niepełny ostatni rząd boxów o tej samej szerokości i wyśrodkowany; Rząd z „+” bez opisów w źródle zostaje z małymi kartami. Wcześniej: Box z logo, Box Liczba szeroki (zamiast pasa przy jednej liczbie), Sekcje w dwóch kolumnach (rola Tekst opisowy), wyśrodkowany tekst w kartach diagramu cyklu, wykres jako obraz skalowany do obszaru. Wcześniej: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
 
 Ten plik jest indeksem i jedynym źródłem zasad oraz tokenów wyglądu (kolory, wymiary, typografia, odstępy). Szablony HTML wzorców są w trzech plikach z sekcji „Pliki wzorców”. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -80,6 +80,7 @@ W szablonach zastępuj `[[rola]]` wartością z tabeli. `[[rola@0]]` to ten sam 
 | tlo/smuga-mocna | rgba(247,252,246,0.12) | smuga światła, mocna |
 | tlo/smuga-slaba | rgba(247,252,246,0.06) | smuga światła, słaba |
 | tlo/winieta | rgba(17,46,23,0.22) | winieta |
+| tlo/przekladka | rgba(17,46,23,0.62) | równa ciemna warstwa na zdjęciu przekładki |
 | tlo/kolumna-funduszu | rgba(17,46,23,0.75) | tło kolumny B w tabeli |
 | tabela/naglowek-lokata | #34493D | nagłówek kolumny A tabeli |
 | tabela/naglowek-fundusz | #C0D436 | nagłówek kolumny B tabeli |

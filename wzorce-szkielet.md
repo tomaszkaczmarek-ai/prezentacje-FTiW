@@ -70,12 +70,12 @@ Kiedy: Wyłącznie pierwszy slajd. Pola: nadtytuł, tytuł (max 2 linie), podtyt
 
 ### Przekładka
 
-Kiedy: początek nowej części prezentacji (rozdział), zwykle co kilka slajdów. Pola: numer części (dwie cyfry), tytuł (max 2 linie), podtytuł (opcjonalny, 1 linia), zdjęcie pełnoekranowe, logo, numer strony. Zdjęcie z pliku użytkownika (sekcja „Zdjęcia i wykresy”); bez zdjęcia użyj gładkiego tła tlo/okladka. Zdjęcie jest widoczne w całości (tylko lekka winieta), a tekst leży na karcie szklanej. Dzięki temu przekładka wyraźnie różni się od okładki (ciemny gradient z lewej, ramka). Bez smug światła.
+Kiedy: początek nowej części prezentacji (rozdział), zwykle co kilka slajdów. Pola: numer części (dwie cyfry), tytuł (max 2 linie), podtytuł (opcjonalny, 1 linia), zdjęcie pełnoekranowe, logo, numer strony. Zdjęcie z pliku użytkownika (sekcja „Zdjęcia i wykresy”); bez zdjęcia użyj gładkiego tła tlo/okladka. Zdjęcie jest przykryte równą ciemną warstwą (tlo/przekladka), która wycisza jego szczegóły, a tekst leży na karcie szklanej. Dzięki temu przekładka wyraźnie różni się od okładki (ciemny gradient z lewej, ramka). Bez smug światła.
 
 ```html
 <section id="divider" style="background:[[tlo/okladka]]">
 <img src="{zdjęcie}" alt="{opis}" style="position:absolute;top:0;left:0;width:1920px;height:1080px;object-fit:cover">
-<div style="position:absolute;top:0;left:0;width:1920px;height:1080px;display:flex;flex-direction:column;background:[[tlo/winieta]]"></div>
+<div style="position:absolute;top:0;left:0;width:1920px;height:1080px;display:flex;flex-direction:column;background:[[tlo/przekladka]]"></div>
 <div style="position:absolute;top:330px;left:128px;width:1100px;display:flex;flex-direction:column;align-items:center;background:[[tlo/kolumna-funduszu]];border-radius:40px"><div style="height:48px"></div><div style="width:988px;display:flex;flex-direction:column;gap:16px">
 <p style="font-size:96px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{nn}</p>
 <div style="width:120px;height:4px;background:[[akcent/glowny]]"></div>
