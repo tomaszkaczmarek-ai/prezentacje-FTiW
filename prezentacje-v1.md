@@ -2,7 +2,7 @@
 
 meta/wersja: **2026-11-05.1**
 
-meta/zmiana: Box z logo, Box Liczba szeroki (zamiast pasa przy jednej liczbie), Sekcje w dwóch kolumnach (rola Tekst opisowy), wyśrodkowany tekst w kartach diagramu cyklu, wykres jako obraz skalowany do obszaru. Wcześniej: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
+meta/zmiana: Niepełny ostatni rząd boxów o tej samej szerokości i wyśrodkowany; Rząd z „+” bez opisów w źródle zostaje z małymi kartami. Wcześniej: Box z logo, Box Liczba szeroki (zamiast pasa przy jednej liczbie), Sekcje w dwóch kolumnach (rola Tekst opisowy), wyśrodkowany tekst w kartach diagramu cyklu, wykres jako obraz skalowany do obszaru. Wcześniej: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
 
 Ten plik jest indeksem i jedynym źródłem zasad oraz tokenów wyglądu (kolory, wymiary, typografia, odstępy). Szablony HTML wzorców są w trzech plikach z sekcji „Pliki wzorców”. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -151,6 +151,7 @@ Cel: brak pustych połaci, brak nachodzenia elementów, takie same odstępy na k
 - **Standardowy odstęp między boxami i blokami: 32 px** (w pionie i w poziomie). Wewnątrz boxu 16 px między elementami, 12 px między pozycjami listy.
 - **Nagłówek:** stała wysokość 112 (y 128–240). Treść zaczyna się najwyżej w y=304 (odstęp od nagłówka min. 64).
 - **Obszar treści:** x 128–1792 (1664), y 304–920 (616). Poniżej, do y=964, wolny margines. W układach z paskiem wskaźników (od y=788) obszar kończy się 24 px nad paskiem.
+- **Niepełny ostatni rząd boxów** (np. 5 kart jako 3 + 2) ma boxy o tej samej szerokości co rzędy wyżej i jest wyśrodkowany w poziomie. Nie rozciągaj go na całą szerokość.
 - **Boxy nie są rozciągane**, żeby wypełnić obszar. Box ma wysokość naturalną. Boxy w jednym rzędzie mają jednakową wysokość (najwyższego z nich).
 - **Wyrównanie w pionie:** blok treści niższy niż 70% obszaru (poniżej ok. 431 px) wyśrodkuj w pionie względem obszaru treści. Blok wyższy trzymaj od góry (y=304). Środek geometryczny, bez korekt optycznych; osoba tworząca może sama poprosić o przesunięcie.
 - **Strefy zarezerwowane:** elementy o stałej pozycji (kafelek logo, QR, portret, pasek wskaźników, stopka) mają wokół siebie min. 24 px wolnego miejsca. Treść nie wchodzi w ich strefę.

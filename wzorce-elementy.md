@@ -113,7 +113,7 @@ Kiedy: między elementami formuły (A + B + C).
 <p style="font-size:56px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">+</p>
 ```
 
-Rząd z operatorem „+”: karty w rzędzie mają jednakową wysokość (`align-items:stretch`), znak „+” jest wyśrodkowany w pionie względem rzędu, a cały rząd podlega zasadom z sekcji „Odstępy i obszar treści” (wyśrodkowanie w pionie, gdy blok jest niższy niż 70% obszaru).
+Rząd z operatorem „+”: gdy źródło nie ma opisów kart, karty zostają małe (tytuł i ikona) i rząd jest wyśrodkowany w pionie; nie dopisuj opisów i nie powiększaj kart dla wypełnienia slajdu. Gdy źródło ma opisy, użyj kart „Ikona z opisem” (ikona 64, tytuł 30, opis 26) w tym samym rzędzie. Karty w rzędzie mają jednakową wysokość (`align-items:stretch`), znak „+” jest wyśrodkowany w pionie względem rzędu, a cały rząd podlega zasadom z sekcji „Odstępy i obszar treści” (wyśrodkowanie w pionie, gdy blok jest niższy niż 70% obszaru).
 
 ```html
 <div style="display:flex;flex-direction:row;align-items:stretch;gap:16px">{KARTA A}<div style="display:flex;flex-direction:column;justify-content:center"><p style="font-size:56px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">+</p></div>{KARTA B}<div style="display:flex;flex-direction:column;justify-content:center"><p style="font-size:56px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">+</p></div>{KARTA C}</div>
