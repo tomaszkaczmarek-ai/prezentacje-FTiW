@@ -1,10 +1,10 @@
 # Design system prezentacji
 
-meta/wersja: **2026-11-04.4**
+meta/wersja: **2026-11-04.6**
 
-meta/zmiana: Kolor pasa wskaźników zmieniony na ciemniejszy z palety (rgba(17,46,23,0.75)). Wcześniej: Dodana zasada „Układ ze źródła” (pierwszeństwo przed doborem układu, gdy użytkownik załączył slajd źródłowy). Wcześniej: dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
+meta/zmiana: Nadtytuł (dawniej „eyebrow”), nagłówek stałej wysokości 112 (tytuł 56 lub 48), sekcja „Odstępy i obszar treści” (skala, centrowanie, pojemności), molekuły: karta osoby, ikona z opisem, kolumna z ikoną i listą. Wcześniej: dodane atomy (ikony, punktor, znak plus, odznaka, karta szklana, ramka zdjęcia 2 px), zasady zdjęć i wykresów. Wcześniej: Kolor pasa wskaźników zmieniony na ciemniejszy z palety (rgba(17,46,23,0.75)). Wcześniej: Dodana zasada „Układ ze źródła” (pierwszeństwo przed doborem układu, gdy użytkownik załączył slajd źródłowy). Wcześniej: dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
 
-Źródło wartości: plik projektowy właściciela (Figma). Ten plik jest odczytywalną kopią dla skilla do prezentacji. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
+Źródło wartości: ten plik jest jedynym źródłem wyglądu prezentacji dla skilla. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
 ## 1. Role kolorów
 
@@ -50,12 +50,14 @@ W szablonach zastępuj `[[rola]]` wartością z tabeli. `[[rola@0]]` to ten sam 
 | promien/tor-paska | 4 |
 | linia/gorna-karty | 4 |
 | linia/tabeli | 1 |
-| odstep liter eyebrow | 5 |
+| odstęp liter nadtytułu | 5 |
 | odstep liter etykieta | 3 |
 | odstęp ramy treści (nagłówek–treść) | 32 (przy tabeli 28, w układzie Opis funduszu 24) |
 | kafelek logo partnera | 360×112, promień 14 |
 | kafelek QR | 144×144, promień 12 |
-| portret w kółku | średnica 288 (zdjęcie 272 + ramka 8 px w kolorze akcent/glowny) |
+| portret w kółku | średnica 288 (zdjęcie 284 + ramka 2 px w kolorze akcent/glowny) |
+| promien/zdjecie | 24 (prostokątna ramka zdjęcia) |
+| linia/ramka-zdjecia | 2 (limonka) |
 | pas wskaźników | wysokość 176, od y=788 do 964 |
 | pas stopki | wysokość 116, od y=964 |
 
@@ -69,6 +71,7 @@ Font: Montserrat. Face: https://fonts.googleapis.com/css2?family=Montserrat:wght
 | Liczba duża | 96 | 700 | 1,1 |  |
 | Liczba KPI | 72 | 700 | 1,1 |  |
 | Tytuł slajdu | 56 | 700 | 1,1 |  |
+| Tytuł slajdu – kompaktowy | 48 | 700 | 1,1 | gdy tytuł nie mieści się w jednej linii w rozmiarze 56 |
 | Jednostka | 40 | 700 | 1,1 |  |
 | Podtytuł | 32 | 400 | 1,3 |  |
 | Podtytuł – pogrubiony | 32 | 700 | 1,3 |  |
@@ -77,7 +80,7 @@ Font: Montserrat. Face: https://fonts.googleapis.com/css2?family=Montserrat:wght
 | Tekst karty – pogrubiony | 26 | 700 | 1,25 |  |
 | Tekst | 24 | 400 | 1,35 |  |
 | Tekst – pogrubiony | 24 | 700 | 1,3 |  |
-| Eyebrow | 24 | 400 | 1,4 | wielkie litery, odstęp 5 |
+| Nadtytuł | 24 | 400 | 1,4 | wielkie litery, odstęp 5 |
 | Etykieta bloku | 24 | 600 | 1,3 | wielkie litery, odstęp 3 |
 
 ## 4. Wzorce (szablony HTML)
@@ -102,11 +105,11 @@ Kiedy: Każdy slajd poza okładką. Kąt światła {kat}: 120, 60, 150, 180, pot
 
 ### Nagłówek slajdu
 
-Kiedy: Początek każdego slajdu treści. Pola: eyebrow (krótka etykieta), tytuł (jedno zdanie, do 2 linii).
+Kiedy: Początek każdego slajdu treści. Pola: nadtytuł (krótka etykieta nad tytułem, obowiązkowy: jeśli brief go nie podaje, wyprowadź z nazwy sekcji lub prezentacji), tytuł (jedna linia). Nagłówek ma stałą wysokość 112 px niezależnie od rozmiaru tytułu, żeby treść pod nim zawsze zaczynała się w tym samym miejscu. Tytuł do 52 znaków w rozmiarze 56, 53–61 znaków w rozmiarze 48 (styl „Tytuł slajdu – kompaktowy”), dłuższy skróć i wpisz do raportu. Wyjątek: układ „Opis funduszu” ma własny nagłówek (szerokość 1060, do 2 linii).
 
 ```html
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;line-height:1.4;letter-spacing:5px;text-transform:uppercase;color:[[tekst/podstawowy]]">{eyebrow}</p>
+<div style="display:flex;flex-direction:column;gap:16px;height:112px">
+<p style="font-size:24px;line-height:1.4;letter-spacing:5px;text-transform:uppercase;color:[[tekst/podstawowy]]">{nadtytuł}</p>
 <h2 style="font-size:56px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{tytuł}</h2>
 </div>
 ```
@@ -193,7 +196,7 @@ Kiedy: Porównanie dwóch opcji według kryteriów; nagłówek raz, do 7 wierszy
 
 ### Okładka slajdu
 
-Kiedy: Wyłącznie pierwszy slajd. Pola: eyebrow, tytuł (max 2 linie), podtytuł (1 linia), zdjęcie pełnoekranowe, logo. Bez smug światła i stopki. Tekst zawsze po lewej.
+Kiedy: Wyłącznie pierwszy slajd. Pola: nadtytuł, tytuł (max 2 linie), podtytuł (1 linia), zdjęcie pełnoekranowe, logo. Bez smug światła i stopki. Tekst zawsze po lewej.
 
 ```html
 <section id="cover" style="background:[[tlo/okladka]]">
@@ -201,7 +204,7 @@ Kiedy: Wyłącznie pierwszy slajd. Pola: eyebrow, tytuł (max 2 linie), podtytu�
 <div style="position:absolute;top:0;left:0;width:1920px;height:1080px;display:flex;flex-direction:column;background:linear-gradient(90deg, rgba(17,46,23,0.97) 0%, rgba(17,46,23,0.86) 48%, rgba(17,46,23,0.22) 100%)"></div>
 <div style="position:absolute;top:48px;left:48px;width:1824px;height:984px;display:flex;flex-direction:column;border:1px solid [[linia/ramka-okladki]]"></div>
 <img src="{logo}" alt="Logo" style="position:absolute;top:120px;left:128px;width:374px;height:28px;object-fit:contain">
-<p style="position:absolute;top:405px;left:128px;width:1280px;font-size:24px;line-height:1.4;letter-spacing:5px;text-transform:uppercase;color:[[tekst/podstawowy]]">{eyebrow}</p>
+<p style="position:absolute;top:405px;left:128px;width:1280px;font-size:24px;line-height:1.4;letter-spacing:5px;text-transform:uppercase;color:[[tekst/podstawowy]]">{nadtytuł}</p>
 <div style="position:absolute;top:469px;left:128px;width:120px;height:4px;background:[[akcent/glowny]]"></div>
 <h1 style="position:absolute;top:505px;left:128px;width:1470px;font-size:84px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{tytuł}</h1>
 <p style="position:absolute;top:824px;left:128px;width:1210px;font-size:32px;line-height:1.4;color:[[tekst/podstawowy]]">{podtytuł}</p>
@@ -239,7 +242,7 @@ Kiedy: dłuższy opis z nagłówkiem, bez karty. Sekcje układaj w kolumnie szer
 Kiedy: zdjęcie osoby (np. zarządzającego). Pole: zdjęcie kwadratowe lub przycięte do kwadratu, imię i nazwisko w alt. Pozycja stała: x=1504, y=440 (nad paskiem wskaźników, pod podpisem QR).
 
 ```html
-<img src="{portret}" alt="{osoba}" style="position:absolute;left:1504px;top:440px;width:272px;height:272px;border:8px solid [[akcent/glowny]];border-radius:144px;object-fit:cover">
+<img src="{portret}" alt="{osoba}" style="position:absolute;left:1504px;top:440px;width:284px;height:284px;border:2px solid [[akcent/glowny]];border-radius:144px;object-fit:cover">
 ```
 
 ### Pasek wskaźników
@@ -274,7 +277,7 @@ Kiedy: układy z paskiem wskaźników (pas stopki idzie zaraz za tłem smug, prz
 
 ### Układ: Opis funduszu
 
-Kiedy: dużo tekstu opisowego (2–3 sekcje, do ok. 1000 znaków) plus 2–4 wskaźniki; opcjonalnie logo partnera, QR i portret. Kolejność elementów w sekcji slajdu treści: 1) trzy smugi światła, 2) pas stopki, 3) nagłówek slajdu (eyebrow + tytuł, szerokość 1060, odstęp ramy 24), 4) kafelek logo partnera, 5) QR z podpisem, 6) kolumna sekcji tekstowych, 7) portret, 8) pasek wskaźników, 9) logo i numer strony. Elementy opcjonalne pomijaj, jeśli nie ma ich w materiale; pozostałe zostają na swoich miejscach. Rama slajdu jak „Slajd treści (rama)” z odstępem 24.
+Kiedy: dużo tekstu opisowego (2–3 sekcje, do ok. 1000 znaków) plus 2–4 wskaźniki; opcjonalnie logo partnera, QR i portret. Kolejność elementów w sekcji slajdu treści: 1) trzy smugi światła, 2) pas stopki, 3) nagłówek slajdu (nadtytuł + tytuł, szerokość 1060, odstęp ramy 24), 4) kafelek logo partnera, 5) QR z podpisem, 6) kolumna sekcji tekstowych, 7) portret, 8) pasek wskaźników, 9) logo i numer strony. Elementy opcjonalne pomijaj, jeśli nie ma ich w materiale; pozostałe zostają na swoich miejscach. Rama slajdu jak „Slajd treści (rama)” z odstępem 24.
 
 ## 5. Dobór układu
 
@@ -303,6 +306,183 @@ Gdy użytkownik załączył slajd źródłowy (.pptx, PDF, obraz), ma dostać sl
 4. **Czego nie wolno bez prośby użytkownika:** dzielić slajdu na dwa, łączyć dwóch w jeden, przenosić elementu do innej strefy, zmieniać kolejności, zamieniać typu elementu (np. liczba ze źródła w kartę tekstową, tekst ze wskaźnikami w tabelę). Jeśli element ze źródła nie mieści się w układzie (np. za długi tekst), najpierw skróć tekst, nie zmieniaj układu; jeśli to nie wystarcza, zapytaj.
 5. **Raport:** napisz, którą drogą poszedłeś (programowany układ albo odtworzenie ze źródła) i wymień odstępstwa od źródła (przesunięte elementy, skrócone teksty, brakujące zasoby).
 
+## 8. Atomy
+
+Najmniejsze elementy, z których składają się molekuły i układy.
+
+### Ikony
+
+Jeden styl: linia 1,75, końce i łączenia zaokrąglone, bez wypełnienia, jeden kolor. Używaj wyłącznie ikon z poniższej listy, wybierając według znaczenia; nie rysuj i nie przenoś ikon ze źródła. Dwa warianty koloru: `limonka` (na ciemnych kartach i tle, kolor akcent/glowny) oraz `ciemne` (na limonkowym tle, kolor tekst/na-limonce). Domyślny rozmiar 64×64 px. Pliki SVG:
+
+- limonka: `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/ikony/limonka/<plik>`
+- ciemne: `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/ikony/ciemne/<plik>`
+
+Pobierz potrzebne pliki poleceniem w powłoce (np. `curl -sSLO <adres>`), wgraj do talii jako zasób i użyj zwróconego adresu `/_blob/…`. Jeśli pobranie się nie uda, zgłoś to w raporcie i zostaw w miejscu ikony puste miejsce 64×64.
+
+| Znaczenie | Plik |
+|---|---|
+| bezpieczeństwo | bezpieczenstwo.svg |
+| środki | srodki.svg |
+| wzrost | wzrost.svg |
+| oszczędności | oszczednosci.svg |
+| bank, instytucja | bank.svg |
+| gotówka | gotowka.svg |
+| koszty, opłaty | koszty.svg |
+| współpraca | wspolpraca.svg |
+| klienci | klienci.svg |
+| osoba | osoba.svg |
+| doradztwo | doradztwo.svg |
+| firma | firma.svg |
+| świat | swiat.svg |
+| czas, horyzont | czas.svg |
+| termin | termin.svg |
+| ochrona | ochrona.svg |
+| dostęp | dostep.svg |
+| regulacje, prawo | regulacje.svg |
+| dokument | dokument.svg |
+| wyniki | wyniki.svg |
+| notowania | notowania.svg |
+| struktura | struktura.svg |
+| oprocentowanie | oprocentowanie.svg |
+| ochrona kapitału | ochrona-kapitalu.svg |
+| dywersyfikacja | dywersyfikacja.svg |
+| cel | cel.svg |
+| analiza | analiza.svg |
+| potwierdzenie | potwierdzenie.svg |
+| kontakt | kontakt.svg |
+| platforma online | platforma.svg |
+| nagrody | nagrody.svg |
+| płynność | plynnosc.svg |
+
+Szablon ikony:
+
+```html
+<img src="{ikona}" alt="" style="width:64px;height:64px">
+```
+
+### Punktor „//”
+
+Kiedy: pozycja listy w sekcji tekstowej lub wyliczeniu.
+
+```html
+<div style="display:flex;flex-direction:row;gap:12px"><p style="font-size:24px;font-weight:700;line-height:1.35;color:[[akcent/glowny]]">//</p><p style="font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{pozycja}</p></div>
+```
+
+### Znak „+”
+
+Kiedy: między elementami formuły (A + B + C).
+
+```html
+<p style="font-size:56px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">+</p>
+```
+
+### Odznaka
+
+Kiedy: krótka etykieta kategorii w rogu slajdu lub nad treścią (np. FUNDUSZ INWESTYCYJNY). Do 3 słów.
+
+```html
+<div style="display:flex;flex-direction:row"><p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;line-height:1.3;color:[[tekst/na-limonce]];background:[[akcent/glowny]];border-radius:16px;padding:8px 20px">{tekst}</p></div>
+```
+
+### Karta szklana
+
+Kiedy: blok treści na zdjęciu (okładka, przekładka) lub gdy zdjęcie jest dozwolone zgodnie z sekcją 9. Bez limonkowej kreski.
+
+```html
+<div style="display:flex;flex-direction:column;gap:8px;background:[[tlo/kolumna-funduszu]];border-radius:40px;padding:32px 40px">{ZAWARTOŚĆ}</div>
+```
+
+### Ramka zdjęcia
+
+Kiedy: zdjęcie osoby lub ilustracja w treści. Limonkowa linia 2 px. Kółko (średnica {d}, zdjęcie {d} minus 4 px, promień połowa d) lub prostokąt (promień 24 px).
+
+```html
+<img src="{zdjęcie}" alt="{opis}" style="width:{d-4}px;height:{d-4}px;border:2px solid [[akcent/glowny]];border-radius:{d/2}px;object-fit:cover">
+```
+
+```html
+<img src="{zdjęcie}" alt="{opis}" style="width:{szer-4}px;height:{wys-4}px;border:2px solid [[akcent/glowny]];border-radius:24px;object-fit:cover">
+```
+
+## 9. Molekuły
+
+Gotowe połączenia atomów. Wszystkie stoją w ramie box danych (cienka limonkowa kreska u góry) i mają wysokość naturalną, bez rozciągania. Szerokość boxu w rzędzie: 2 boxy 816, 3 boxy 533, 4 boxy 392 (odstęp 32). Pojemności liczone dla Montserrat (średnio 12,7 px na znak w 24 px; 13,8 w 26 px; 16,8 w 30 px pogrubionym; 16,2 w 24 px półpogrubionym z odstępem 3).
+
+### Karta osoby
+
+Kiedy: zarządzający, zespół, doradcy: 2–4 osoby obok siebie. Pola: zdjęcie (kwadrat), imię i nazwisko, rola, opis. Zdjęcie w kółku średnicy 200 (zdjęcie 196 + ramka 2 px).
+
+```html
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:40px">
+<img src="{zdjęcie}" alt="{imię i nazwisko}" style="width:196px;height:196px;border:2px solid [[akcent/glowny]];border-radius:100px;object-fit:cover">
+<p style="font-size:30px;font-weight:700;line-height:1.2;text-align:center;color:[[tekst/tytul]]">{imię i nazwisko}</p>
+<p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;line-height:1.3;text-align:center;color:[[akcent/glowny]]">{rola}</p>
+<div style="width:100%;border-top:1px solid [[linia/karta]]"></div>
+<p style="font-size:24px;line-height:1.35;text-align:center;color:[[tekst/podstawowy]]">{opis}</p>
+</div>
+```
+
+Pojemność (padding 40): w rzędzie po 3 osoby: imię i nazwisko do 26 znaków (1 linia), rola do 2 linii po 28 znaków, opis do 4 linii po 35 znaków (ok. 140 znaków). Po 2 osoby: imię i nazwisko do 40 znaków, rola do 2 linii po 45 znaków, opis do 4 linii po 60 znaków. Po 4 osoby: padding 32, zdjęcie 160 (156 + ramka 2 px, promień 80), imię i nazwisko do 19 znaków, rola do 2 linii po 20 znaków, opis do 4 linii po 25 znaków (ok. 100 znaków). Wysokość: 3 osoby ok. 546 px, 4 osoby ok. 510 px.
+
+### Ikona z opisem
+
+Kiedy: pojedyncza cecha, korzyść lub krok. Pola: ikona (z sekcji Atomy → Ikony, limonkowa), tytuł, opis.
+
+```html
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:40px">
+<img src="{ikona}" alt="" style="width:64px;height:64px">
+<p style="font-size:30px;font-weight:700;line-height:1.2;color:[[tekst/tytul]]">{tytuł}</p>
+<p style="font-size:26px;line-height:1.35;color:[[tekst/podstawowy]]">{opis}</p>
+</div>
+```
+
+Pojemność w rzędzie po 3 (padding 40): tytuł 26 znaków w linii, opis 32 znaki w linii. Dwa rzędy po 3 (6 pozycji): tytuł 1 linia, opis do 2 linii (ok. 64 znaków); wysokość boxu ok. 286, dwa rzędy z odstępem 32 ok. 604. Jeden rząd po 3: tytuł do 2 linii, opis do 5 linii (ok. 160 znaków). Rząd po 4 (padding 32): tytuł 19 znaków w linii, opis 23 znaki w linii, tytuł do 2 linii, opis do 4 linii.
+
+### Kolumna z ikoną i listą
+
+Kiedy: kategoria z kilkoma punktami (np. obszary usług, zalety). Pola: ikona, tytuł, 2–5 pozycji listy. Pozycja ma do 2 linii.
+
+```html
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:40px">
+<img src="{ikona}" alt="" style="width:64px;height:64px">
+<p style="font-size:30px;font-weight:700;line-height:1.2;color:[[tekst/tytul]]">{tytuł}</p>
+<div style="border-top:1px solid [[linia/karta]]"></div>
+<div style="display:flex;flex-direction:column;gap:12px">{POZYCJE: atom „Punktor //”}</div>
+</div>
+```
+
+Pojemność: w rzędzie po 3 (padding 40) pozycja ma 33 znaki w linii; w rzędzie po 4 (padding 32) 22 znaki w linii. Wysokość: tytuł 1 linia, 5 pozycji po 2 linie ok. 590 px; mniej pozycji odpowiednio mniej (pozycja 1-liniowa 33 px, 2-liniowa 65 px, odstęp 12).
+
+## 10. Odstępy i obszar treści
+
+Cel: brak pustych połaci, brak nachodzenia elementów, takie same odstępy na każdym slajdzie.
+
+- **Skala odstępów:** 8, 16, 24, 32, 40, 48 px. Nie używaj innych wartości.
+- **Standardowy odstęp między boxami i blokami: 32 px** (w pionie i w poziomie). Wewnątrz boxu 16 px między elementami, 12 px między pozycjami listy.
+- **Nagłówek:** stała wysokość 112 (y 128–240). Treść zaczyna się najwyżej w y=304 (odstęp od nagłówka min. 64).
+- **Obszar treści:** x 128–1792 (1664), y 304–920 (616). Poniżej, do y=964, wolny margines. W układach z paskiem wskaźników (od y=788) obszar kończy się 24 px nad paskiem.
+- **Boxy nie są rozciągane**, żeby wypełnić obszar. Box ma wysokość naturalną. Boxy w jednym rzędzie mają jednakową wysokość (najwyższego z nich).
+- **Wyrównanie w pionie:** blok treści niższy niż 70% obszaru (poniżej ok. 431 px) wyśrodkuj w pionie względem obszaru treści. Blok wyższy trzymaj od góry (y=304). Środek geometryczny, bez korekt optycznych; osoba tworząca może sama poprosić o przesunięcie.
+- **Strefy zarezerwowane:** elementy o stałej pozycji (kafelek logo, QR, portret, pasek wskaźników, stopka) mają wokół siebie min. 24 px wolnego miejsca. Treść nie wchodzi w ich strefę.
+- **Za dużo treści na obszar:** najpierw skróć teksty (patrz pojemności), potem zmniejsz liczbę elementów w rzędzie lub wybierz układ o większej pojemności. Nie zmniejszaj odstępów poniżej skali.
+
+Szablon obszaru treści:
+
+```html
+<div style="position:absolute;left:128px;top:304px;width:1664px;height:616px;display:flex;flex-direction:column;justify-content:{center albo flex-start};gap:32px">{BLOKI}</div>
+```
+
+Szablon rzędu boxów:
+
+```html
+<div style="display:flex;flex-direction:row;gap:32px">{BOXY}</div>
+```
+
+## 11. Zdjęcia i wykresy
+
+- **Zdjęcia w tle** tylko na okładce i przekładkach. Na pozostałych slajdach tylko na wyraźną prośbę osoby tworzącej prezentację i tylko z plików wystarczającej jakości (w pełnym rozmiarze slajdu min. 1920 px szerokości). Jeśli plik jest za mały, zgłoś to w raporcie i użyj gładkiego tła.
+- **Wykresy i diagramy złożone nie są odrysowywane.** Wykres ze źródła wstaw jako obraz ze źródła, w ramce o stałych wymiarach, bez przeróbki danych i kolorów, i wpisz to do raportu. Wyjątek: struktura procentowa o kilku wartościach (box Wykres lub wykres poziomy), gdy liczby są podane w tekście źródła i skill przepisuje je dosłownie.
+
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-04.4)
+KONIEC PLIKU (meta/wersja 2026-11-04.6)
