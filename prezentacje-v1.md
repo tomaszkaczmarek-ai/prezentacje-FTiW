@@ -1,8 +1,8 @@
 # Design system prezentacji
 
-meta/wersja: **2026-11-04.6**
+meta/wersja: **2026-11-04.13**
 
-meta/zmiana: Nadtytuł (dawniej „eyebrow”), nagłówek stałej wysokości 112 (tytuł 56 lub 48), sekcja „Odstępy i obszar treści” (skala, centrowanie, pojemności), molekuły: karta osoby, ikona z opisem, kolumna z ikoną i listą. Wcześniej: dodane atomy (ikony, punktor, znak plus, odznaka, karta szklana, ramka zdjęcia 2 px), zasady zdjęć i wykresów. Wcześniej: Kolor pasa wskaźników zmieniony na ciemniejszy z palety (rgba(17,46,23,0.75)). Wcześniej: Dodana zasada „Układ ze źródła” (pierwszeństwo przed doborem układu, gdy użytkownik załączył slajd źródłowy). Wcześniej: dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
+meta/zmiana: Usunięte sprzeczności: odstęp nagłówek–treść 64 (ramka bez gap), skracanie a dobór układu, zakres skali odstępów, rozmiary ikon, reguły ogólne ze źródłem. Wcześniej: Atom „Źródło w stopce”. Wcześniej: Molekuły „Wiersz listy z ikoną”, „Łącznik pionowy”, „Karta wyśrodkowana” (schemat spółka matka–spółka zależna). Wcześniej: Molekuły „Wiersz składnika” (mały kafelek logo + nazwa) i „Tabela wyników (okresy)”. Wcześniej: Szerokie boxy (Tekst, Wykres w dwóch kolumnach). Wcześniej: Przekładka (zdjęcie, numer części, tytuł) i wiersz tabeli z ikoną. Wcześniej: Ściana logo partnerów (wzorzec i 19 plików logo przyciętych do znaku, folder logo-partnerow). Wcześniej: Nadtytuł (dawniej „eyebrow”), nagłówek stałej wysokości 112 (tytuł 56 lub 48), sekcja „Odstępy i obszar treści” (skala, centrowanie, pojemności), molekuły: karta osoby, ikona z opisem, kolumna z ikoną i listą. Wcześniej: dodane atomy (ikony, punktor, znak plus, odznaka, karta szklana, ramka zdjęcia 2 px), zasady zdjęć i wykresów. Wcześniej: Kolor pasa wskaźników zmieniony na ciemniejszy z palety (rgba(17,46,23,0.75)). Wcześniej: Dodana zasada „Układ ze źródła” (pierwszeństwo przed doborem układu, gdy użytkownik załączył slajd źródłowy). Wcześniej: dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
 
 Źródło wartości: ten plik jest jedynym źródłem wyglądu prezentacji dla skilla. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -52,7 +52,7 @@ W szablonach zastępuj `[[rola]]` wartością z tabeli. `[[rola@0]]` to ten sam 
 | linia/tabeli | 1 |
 | odstęp liter nadtytułu | 5 |
 | odstep liter etykieta | 3 |
-| odstęp ramy treści (nagłówek–treść) | 32 (przy tabeli 28, w układzie Opis funduszu 24) |
+| odstęp nagłówek–treść | 64 (treść zaczyna się w y=304; wyjątek: układ Opis funduszu ma własny odstęp 24) |
 | kafelek logo partnera | 360×112, promień 14 |
 | kafelek QR | 144×144, promień 12 |
 | portret w kółku | średnica 288 (zdjęcie 284 + ramka 2 px w kolorze akcent/glowny) |
@@ -92,7 +92,7 @@ Zastępuj `[[rola]]` i `{pole}`. Twarda spacja w HTML to `&#160;` (tylko encje n
 Kiedy: Każdy slajd poza okładką. Kąt światła {kat}: 120, 60, 150, 180, potem od nowa.
 
 ```html
-<section id="{id}" style="background:[[tlo/tresc]];color:[[tekst/podstawowy]];font-family:'Montserrat', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<section id="{id}" style="background:[[tlo/tresc]];color:[[tekst/podstawowy]];font-family:'Montserrat', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:0px">
 <div style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;background:linear-gradient({kat}deg, [[tlo/smuga-mocna@0]] 0%, [[tlo/smuga-mocna@0]] 28%, [[tlo/smuga-mocna]] 46%, [[tlo/smuga-mocna@0]] 64%, [[tlo/smuga-mocna@0]] 100%)"></div>
 <div style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;background:linear-gradient({kat}deg, [[tlo/smuga-slaba@0]] 0%, [[tlo/smuga-slaba@0]] 52%, [[tlo/smuga-slaba]] 62%, [[tlo/smuga-slaba@0]] 72%, [[tlo/smuga-slaba@0]] 100%)"></div>
 <div style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;background:radial-gradient(ellipse at 50% 50%, [[tlo/winieta@0]] 45%, [[tlo/winieta]] 100%)"></div>
@@ -123,9 +123,17 @@ Kiedy: Każdy slajd treści. Pola: numer strony (dwie cyfry). Logo jako zasób w
 <p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;line-height:1.2;text-align:right;color:[[tekst/podstawowy]]">{nn}</p>
 ```
 
+### Źródło w stopce
+
+Kiedy: slajd ma podane źródło danych lub odnośnik do rejestru. Pole: tekst „Źródło: …” (do ok. 70 znaków, 1 linia). Stoi w stopce obok logo, na dole, w tej samej linii co numer strony. Odnośnik z oryginału zachowaj (adres w raporcie, jeśli Slajdy go nie przyjmują).
+
+```html
+<p style="position:absolute;left:520px;bottom:64px;width:927px;font-size:24px;line-height:1.2;color:[[tekst/podstawowy]]">Źródło: <u>{tekst źródła}</u></p>
+```
+
 ### Box danych – rama
 
-Kiedy: Wyróżniony blok, 2–4 obok siebie. Układ w rzędzie: display:flex;gap:32px; dla czterech: display:grid;grid-template-columns:1fr 1fr;gap:28px 32px.
+Kiedy: Wyróżniony blok, 2–4 obok siebie. Układ w rzędzie: display:flex;gap:32px; dla czterech: display:grid;grid-template-columns:1fr 1fr;gap:32px.
 
 ```html
 <div style="flex:1;display:flex;flex-direction:column;gap:{gap}px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:{pad}">{ZAWARTOŚĆ}</div>
@@ -174,6 +182,31 @@ Kiedy: Struktura procentowa, do 5 wierszy. gap 16, padding 28px 40px. Najpierw e
 </div>
 ```
 
+### Box danych – Typ=Tekst szeroki
+
+Kiedy: dłuższy opis na całą szerokość obszaru treści (1664 px), do ok. 370 znaków (3 linie po ok. 124 znaki). Rama i style jak Typ=Tekst, rama bez ustawionej szerokości, w kolumnie obszaru treści `align-self:stretch`. gap 8, padding 32px 40px. Wysokość ok. 172 px (2 linie) lub 205 px (3 linie).
+
+```html
+<div style="display:flex;flex-direction:column;gap:8px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:32px 40px">
+<p style="font-size:24px;line-height:1.3;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:[[tekst/podstawowy]]">{etykieta}</p>
+<p style="font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{treść}</p>
+</div>
+```
+
+### Box danych – Typ=Wykres szeroki
+
+Kiedy: struktura procentowa na całą szerokość, 4–6 wierszy w dwóch kolumnach (wiersze wypełniają kolumny od lewej, najpierw lewa). Każdy wiersz jak w Typ=Wykres. Opis wiersza do ok. 50 znaków w jednej linii. gap 16, padding 28px 40px. Wysokość: 4 wiersze ok. 226 px, 6 wierszy ok. 293 px.
+
+```html
+<div style="display:flex;flex-direction:column;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:28px 40px">
+<p style="font-size:24px;line-height:1.3;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:[[tekst/podstawowy]]">{etykieta}</p>
+<div style="display:flex;flex-direction:row;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">{WIERSZE LEWEJ KOLUMNY}</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">{WIERSZE PRAWEJ KOLUMNY}</div>
+</div>
+</div>
+```
+
 ### Tabela porównawcza
 
 Kiedy: Porównanie dwóch opcji według kryteriów; nagłówek raz, do 7 wierszy. Kolumny 433 / 566 / 665 px (razem 1664). Bez obramowań; nagłówek zaokrąglony 16 px tylko u góry na zewnętrznych krawędziach.
@@ -194,13 +227,25 @@ Kiedy: Porównanie dwóch opcji według kryteriów; nagłówek raz, do 7 wierszy
 </div>
 ```
 
+### Tabela porównawcza – wiersz z ikoną
+
+Kiedy: kryterium tabeli ma ikonę (np. koszty, płynność, bezpieczeństwo). Ikona z biblioteki, w tabeli w rozmiarze 48 (zamiast 64). Wiersz zastępuje wiersz zwykły; wszystkie wiersze tabeli mają wtedy ikonę. Reszta tabeli bez zmian. Kolumna kryterium: tekst do 2 linii po ok. 24 znaki. Wysokość wiersza 72 px (1 linia) lub 85 px (2 linie); przy ikonach mieści się do 7 wierszy.
+
+```html
+<div style="display:flex;flex-direction:row;border-top:1px solid [[linia/tabela]]">
+<div style="width:393px;display:flex;flex-direction:row;align-items:center;gap:16px;padding:12px 20px"><img src="{ikona}" alt="" style="width:48px;height:48px"><p style="font-size:24px;line-height:1.25;font-weight:700;color:[[tekst/podstawowy]]">{kryterium}</p></div>
+<div style="width:566px;display:flex;flex-direction:column;justify-content:center"><p style="padding:10px 20px;font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{A}</p></div>
+<div style="width:665px;display:flex;flex-direction:column;justify-content:center;background:[[tlo/kolumna-funduszu]]"><p style="padding:10px 20px;font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{B}</p></div>
+</div>
+```
+
 ### Okładka slajdu
 
 Kiedy: Wyłącznie pierwszy slajd. Pola: nadtytuł, tytuł (max 2 linie), podtytuł (1 linia), zdjęcie pełnoekranowe, logo. Bez smug światła i stopki. Tekst zawsze po lewej.
 
 ```html
 <section id="cover" style="background:[[tlo/okladka]]">
-<img src="{zdjęcie}" alt="{opis}" style="position:absolute;top:0;left:0;width:1920px;height:1080px">
+<img src="{zdjęcie}" alt="{opis}" style="position:absolute;top:0;left:0;width:1920px;height:1080px;object-fit:cover">
 <div style="position:absolute;top:0;left:0;width:1920px;height:1080px;display:flex;flex-direction:column;background:linear-gradient(90deg, rgba(17,46,23,0.97) 0%, rgba(17,46,23,0.86) 48%, rgba(17,46,23,0.22) 100%)"></div>
 <div style="position:absolute;top:48px;left:48px;width:1824px;height:984px;display:flex;flex-direction:column;border:1px solid [[linia/ramka-okladki]]"></div>
 <img src="{logo}" alt="Logo" style="position:absolute;top:120px;left:128px;width:374px;height:28px;object-fit:contain">
@@ -211,6 +256,28 @@ Kiedy: Wyłącznie pierwszy slajd. Pola: nadtytuł, tytuł (max 2 linie), podtyt
 <aside>Wersja design systemu: {meta/wersja}</aside>
 </section>
 ```
+
+### Przekładka
+
+Kiedy: początek nowej części prezentacji (rozdział), zwykle co kilka slajdów. Pola: numer części (dwie cyfry), tytuł (max 2 linie), podtytuł (opcjonalny, 1 linia), zdjęcie pełnoekranowe, logo, numer strony. Zdjęcie z pliku użytkownika (sekcja „Zdjęcia i wykresy”); bez zdjęcia użyj gładkiego tła tlo/okladka. Zdjęcie jest widoczne w całości (tylko lekka winieta), a tekst leży na karcie szklanej. Dzięki temu przekładka wyraźnie różni się od okładki (ciemny gradient z lewej, ramka). Bez smug światła.
+
+```html
+<section id="divider" style="background:[[tlo/okladka]]">
+<img src="{zdjęcie}" alt="{opis}" style="position:absolute;top:0;left:0;width:1920px;height:1080px;object-fit:cover">
+<div style="position:absolute;top:0;left:0;width:1920px;height:1080px;display:flex;flex-direction:column;background:[[tlo/winieta]]"></div>
+<div style="position:absolute;top:330px;left:128px;width:988px;display:flex;flex-direction:column;gap:16px;background:[[tlo/kolumna-funduszu]];border-radius:40px;padding:48px 56px">
+<p style="font-size:96px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{nn}</p>
+<div style="width:120px;height:4px;background:[[akcent/glowny]]"></div>
+<h1 style="font-size:56px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{tytuł}</h1>
+<p style="font-size:32px;line-height:1.3;color:[[tekst/podstawowy]]">{podtytuł}</p>
+</div>
+<img src="{logo}" alt="Logo" style="position:absolute;left:128px;bottom:64px;width:274px;height:20px;object-fit:contain">
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;line-height:1.2;text-align:right;color:[[tekst/podstawowy]]">{nn strony}</p>
+<aside>Wersja design systemu: {meta/wersja}</aside>
+</section>
+```
+
+Pojemność tytułu: 2 linie po ok. 31 znaków (56 px pogrubiony, szerokość 988 px w karcie), do ok. 60 znaków łącznie; dłuższy skróć i wpisz do raportu. Podtytuł: 1 linia do ok. 55 znaków. Karta ma wysokość naturalną (ok. 420 px przy tytule 2-liniowym i podtytule).
 
 ### Kafelek logo partnera
 
@@ -277,7 +344,7 @@ Kiedy: układy z paskiem wskaźników (pas stopki idzie zaraz za tłem smug, prz
 
 ### Układ: Opis funduszu
 
-Kiedy: dużo tekstu opisowego (2–3 sekcje, do ok. 1000 znaków) plus 2–4 wskaźniki; opcjonalnie logo partnera, QR i portret. Kolejność elementów w sekcji slajdu treści: 1) trzy smugi światła, 2) pas stopki, 3) nagłówek slajdu (nadtytuł + tytuł, szerokość 1060, odstęp ramy 24), 4) kafelek logo partnera, 5) QR z podpisem, 6) kolumna sekcji tekstowych, 7) portret, 8) pasek wskaźników, 9) logo i numer strony. Elementy opcjonalne pomijaj, jeśli nie ma ich w materiale; pozostałe zostają na swoich miejscach. Rama slajdu jak „Slajd treści (rama)” z odstępem 24.
+Kiedy: dużo tekstu opisowego (2–3 sekcje, do ok. 1000 znaków) plus 2–4 wskaźniki; opcjonalnie logo partnera, QR i portret. Kolejność elementów w sekcji slajdu treści: 1) trzy smugi światła, 2) pas stopki, 3) nagłówek slajdu (nadtytuł + tytuł, szerokość 1060, odstęp ramy 24), 4) kafelek logo partnera, 5) QR z podpisem, 6) kolumna sekcji tekstowych, 7) portret, 8) pasek wskaźników, 9) logo i numer strony. Elementy opcjonalne pomijaj, jeśli nie ma ich w materiale; pozostałe zostają na swoich miejscach. Rama slajdu jak „Slajd treści (rama)”, ale z `gap:24px` zamiast `gap:0px` (wyjątek od sekcji „Odstępy i obszar treści”: ten układ nie używa szablonu obszaru treści, a kolumna tekstu płynie pod nagłówkiem).
 
 ## 5. Dobór układu
 
@@ -304,7 +371,8 @@ Gdy użytkownik załączył slajd źródłowy (.pptx, PDF, obraz), ma dostać sl
 2. **Sprawdź, czy pasuje programowany układ.** Układ z tego pliku (np. „Opis funduszu”, siatka kart, tabela) jest użyteczny tylko wtedy, gdy (a) każdy element źródła ma w nim miejsce i (b) rozmieszczenie stref jest takie samo jak w źródle (te same grupy w tych samych częściach slajdu). Jeśli tak, użyj go i wypełnij pola.
 3. **Jeśli nie pasuje, odtwórz układ ze źródła.** Zachowaj strefy, ich kolejność, grupowanie i proporcje z źródła. Zrób to elementami z tego pliku (kafelek logo, box danych, sekcja tekstowa, wykres, tabela, pas wskaźników) w ich rozmiarach i stylach, a brakujące elementy jako zwykłe bloki tekstu w stylach ze skali typografii. Pozycje dopasuj do marginesów 128 px (boki, góra) i 160 px (dół) oraz do odstępów systemu.
 4. **Czego nie wolno bez prośby użytkownika:** dzielić slajdu na dwa, łączyć dwóch w jeden, przenosić elementu do innej strefy, zmieniać kolejności, zamieniać typu elementu (np. liczba ze źródła w kartę tekstową, tekst ze wskaźnikami w tabelę). Jeśli element ze źródła nie mieści się w układzie (np. za długi tekst), najpierw skróć tekst, nie zmieniaj układu; jeśli to nie wystarcza, zapytaj.
-5. **Raport:** napisz, którą drogą poszedłeś (programowany układ albo odtworzenie ze źródła) i wymień odstępstwa od źródła (przesunięte elementy, skrócone teksty, brakujące zasoby).
+5. **Reguły ogólne obowiązują też ze źródłem:** zdjęcia w tle tylko na okładce i przekładkach (sekcja 11; tło ze zdjęciem na slajdzie treści zastąp tłem treści i wpisz do raportu), paleta i skala typografii z systemu, obszar treści z sekcji 10 (y 304–920).
+6. **Raport:** napisz, którą drogą poszedłeś (programowany układ albo odtworzenie ze źródła) i wymień odstępstwa od źródła (przesunięte elementy, skrócone teksty, brakujące zasoby).
 
 ## 8. Atomy
 
@@ -312,7 +380,7 @@ Najmniejsze elementy, z których składają się molekuły i układy.
 
 ### Ikony
 
-Jeden styl: linia 1,75, końce i łączenia zaokrąglone, bez wypełnienia, jeden kolor. Używaj wyłącznie ikon z poniższej listy, wybierając według znaczenia; nie rysuj i nie przenoś ikon ze źródła. Dwa warianty koloru: `limonka` (na ciemnych kartach i tle, kolor akcent/glowny) oraz `ciemne` (na limonkowym tle, kolor tekst/na-limonce). Domyślny rozmiar 64×64 px. Pliki SVG:
+Jeden styl: linia 1,75, końce i łączenia zaokrąglone, bez wypełnienia, jeden kolor. Używaj wyłącznie ikon z poniższej listy, wybierając według znaczenia; nie rysuj i nie przenoś ikon ze źródła. Dwa warianty koloru: `limonka` (na ciemnych kartach i tle, kolor akcent/glowny) oraz `ciemne` (na limonkowym tle, kolor tekst/na-limonce). Domyślny rozmiar 64×64 px; w wierszu listy 40×40, w wierszu tabeli 48×48 (inne rozmiary niedozwolone). Pliki SVG:
 
 - limonka: `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/ikony/limonka/<plik>`
 - ciemne: `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/ikony/ciemne/<plik>`
@@ -453,6 +521,69 @@ Kiedy: kategoria z kilkoma punktami (np. obszary usług, zalety). Pola: ikona, t
 
 Pojemność: w rzędzie po 3 (padding 40) pozycja ma 33 znaki w linii; w rzędzie po 4 (padding 32) 22 znaki w linii. Wysokość: tytuł 1 linia, 5 pozycji po 2 linie ok. 590 px; mniej pozycji odpowiednio mniej (pozycja 1-liniowa 33 px, 2-liniowa 65 px, odstęp 12).
 
+### Ściana logo partnerów
+
+Kiedy: lista partnerów, dystrybutorów lub towarzystw (do 20 logo). Pola: logo z biblioteki (poniżej), nadtytuł i tytuł nagłówka. Logo bierz z biblioteki, nie z pamięci; logo spoza biblioteki wgraj od użytkownika. Kolejność alfabetyczna, chyba że brief mówi inaczej. Pięć kafli w rzędzie, ostatni niepełny rząd wyśrodkowany. Kafel 307×112 (padding 20, pole kafla 267×72, logo w polu 227×64 (object-fit contain), promień 14, tło tlo/kafelek-logo), odstęp 32. Rzędy: 1–5 logo 1 rząd, 6–10 dwa, 11–15 trzy, 16–20 cztery (wysokość 544). Więcej niż 20: zgłoś i zapytaj. Cała ściana jest blokiem w obszarze treści (sekcja „Odstępy i obszar treści”), wyśrodkowanym w pionie.
+
+Adres logo: `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/logo-partnerow/{plik}.svg`. Pliki: allianz, blackrock, caspar, erste-tfi, esaliens, fidelity-international, franklin-templeton, generali-investments, ing, investors-tfi, ipopema, pzu-inwestycje, quercus, rockbridge, schroders, skarbiec, superfund, uniqa, vig-c-quadrat.
+
+```html
+<div style="display:flex;flex-direction:row;justify-content:center;gap:32px">{KAFLE}</div>
+```
+
+Kafel:
+
+```html
+<div style="width:267px;height:72px;padding:20px;background:[[tlo/kafelek-logo]];border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="{logo}" alt="{nazwa}" style="width:227px;height:64px;object-fit:contain"></div>
+```
+
+### Wiersz składnika
+
+Kiedy: lista składników, partnerów lub funduszy z logo i nazwą (np. skład portfela). Pola: logo z biblioteki (folder logo-partnerow), nazwa. Małe kafelki logo 144×32 w polu 144×32 z paddingiem 8 (razem 160×48), odstęp między wierszami 16. Nazwa 1 linia do ok. 53 znaków przy szerokości 680 px (kolumna 864 px); dłuższa zawija się do 2 linii (wiersz 65 px).
+
+```html
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px"><div style="width:144px;height:32px;padding:8px;background:[[tlo/kafelek-logo]];border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="{logo}" alt="{nazwa}" style="width:144px;height:32px;object-fit:contain"></div><p style="width:680px;font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{nazwa}</p></div>
+```
+
+### Tabela wyników (okresy)
+
+Kiedy: jeden wiersz wartości w kilku okresach (np. stopa zwrotu 1M, 3M, 6M, 12M, 36M, 60M, YTD). Szerokość 736 px: pierwsza kolumna 100, siedem kolumn po 90. Nagłówek pogrubiony z linią limonkową pod spodem, bez tła. Wartość do 6 znaków (np. „18,07%”). Dla szerszej tabeli dostosuj kolumny tak, aby suma szerokości = szerokość kolumny slajdu.
+
+```html
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:row;border-bottom:1px solid [[akcent/glowny]]"><div style="width:100px;display:flex;flex-direction:column;justify-content:center"><p style="padding:10px 4px;font-size:24px;line-height:1.25;font-weight:700;color:[[tekst/podstawowy]]">{nazwa wiersza nagłówka}</p></div>(… kolumny nagłówka po 90 px, ten sam styl)</div>
+<div style="display:flex;flex-direction:row"><div style="width:100px;display:flex;flex-direction:column;justify-content:center"><p style="padding:10px 4px;font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{nazwa wiersza}</p></div>(… wartości po 90 px, ten sam styl)</div>
+</div>
+```
+
+### Wiersz listy z ikoną
+
+Kiedy: lista 2–5 faktów z ikoną, w kolumnie tekstowej (np. obok opisu). Ikona z biblioteki w rozmiarze 40, linia nad każdym wierszem i jedna pod ostatnim (linia/karta). Tekst do 2 linii. Wiersze łączysz w kolumnie bez odstępów, z linią zamykającą na dole.
+
+```html
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px;border-top:1px solid [[linia/karta]];padding:20px 0"><img src="{ikona}" alt="" style="width:40px;height:40px"><p style="font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{tekst}</p></div>
+```
+
+Kolumna z wierszami kończy się: `<div style="border-bottom:1px solid [[linia/karta]]">{WIERSZE}</div>`. Wysokość wiersza 1-liniowego 81 px.
+
+### Karta wyśrodkowana
+
+Kiedy: element schematu lub podsumowania (np. spółka matka, spółka zależna), treść wyśrodkowana. Rama jak box danych, szerokość 648 (kolumna 728 z paddingiem 40), padding 32px 40px, gap 16. Wewnątrz: etykieta bloku, nazwa (Tytuł karty), odznaka, logo, liczba KPI (72 px) wyśrodkowane (`align-items:center`, `text-align:center`).
+
+```html
+<div style="width:648px;display:flex;flex-direction:column;align-items:center;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:32px 40px">{ZAWARTOŚĆ}</div>
+```
+
+### Łącznik pionowy
+
+Kiedy: między dwiema kartami wyśrodkowanymi (zależność). Linia 3×48.
+
+```html
+<div style="width:3px;height:48px;background:[[linia/karta]]"></div>
+```
+
+Kolumnę schematu układaj jako `display:flex;flex-direction:column;align-items:center;width:728px`: karta, łącznik, karta.
+
 ## 10. Odstępy i obszar treści
 
 Cel: brak pustych połaci, brak nachodzenia elementów, takie same odstępy na każdym slajdzie.
@@ -464,7 +595,9 @@ Cel: brak pustych połaci, brak nachodzenia elementów, takie same odstępy na k
 - **Boxy nie są rozciągane**, żeby wypełnić obszar. Box ma wysokość naturalną. Boxy w jednym rzędzie mają jednakową wysokość (najwyższego z nich).
 - **Wyrównanie w pionie:** blok treści niższy niż 70% obszaru (poniżej ok. 431 px) wyśrodkuj w pionie względem obszaru treści. Blok wyższy trzymaj od góry (y=304). Środek geometryczny, bez korekt optycznych; osoba tworząca może sama poprosić o przesunięcie.
 - **Strefy zarezerwowane:** elementy o stałej pozycji (kafelek logo, QR, portret, pasek wskaźników, stopka) mają wokół siebie min. 24 px wolnego miejsca. Treść nie wchodzi w ich strefę.
-- **Za dużo treści na obszar:** najpierw skróć teksty (patrz pojemności), potem zmniejsz liczbę elementów w rzędzie lub wybierz układ o większej pojemności. Nie zmniejszaj odstępów poniżej skali.
+- **Za dużo treści na obszar:** bez slajdu źródłowego wybierz układ o większej pojemności (sekcja 5), a teksty skracaj dopiero, gdy żaden układ się nie mieści. Ze slajdem źródłowym obowiązuje sekcja 7 pkt 4 (najpierw skrócenie, potem pytanie). Nie zmniejszaj odstępów poniżej skali.
+- **Zakres skali:** skala dotyczy odstępów układu (między blokami, boxami i kolumnami). Odstępy wewnątrz wzorców (np. 4, 6, 10, 12, 20, 28 px) są częścią szablonu i zostają takie, jak w szablonie.
+- **Obszar treści zastępuje odstęp ramy:** blok z szablonu „obszar treści” jest przypięty bezwzględnie (top 304) i nie zależy od odstępów w ramie slajdu.
 
 Szablon obszaru treści:
 
@@ -485,4 +618,4 @@ Szablon rzędu boxów:
 
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-04.6)
+KONIEC PLIKU (meta/wersja 2026-11-04.13)
