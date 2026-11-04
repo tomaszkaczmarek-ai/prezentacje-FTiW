@@ -1,8 +1,8 @@
 # Design system prezentacji
 
-meta/wersja: **2026-11-04.13**
+meta/wersja: **2026-11-04.15**
 
-meta/zmiana: Usunięte sprzeczności: odstęp nagłówek–treść 64 (ramka bez gap), skracanie a dobór układu, zakres skali odstępów, rozmiary ikon, reguły ogólne ze źródłem. Wcześniej: Atom „Źródło w stopce”. Wcześniej: Molekuły „Wiersz listy z ikoną”, „Łącznik pionowy”, „Karta wyśrodkowana” (schemat spółka matka–spółka zależna). Wcześniej: Molekuły „Wiersz składnika” (mały kafelek logo + nazwa) i „Tabela wyników (okresy)”. Wcześniej: Szerokie boxy (Tekst, Wykres w dwóch kolumnach). Wcześniej: Przekładka (zdjęcie, numer części, tytuł) i wiersz tabeli z ikoną. Wcześniej: Ściana logo partnerów (wzorzec i 19 plików logo przyciętych do znaku, folder logo-partnerow). Wcześniej: Nadtytuł (dawniej „eyebrow”), nagłówek stałej wysokości 112 (tytuł 56 lub 48), sekcja „Odstępy i obszar treści” (skala, centrowanie, pojemności), molekuły: karta osoby, ikona z opisem, kolumna z ikoną i listą. Wcześniej: dodane atomy (ikony, punktor, znak plus, odznaka, karta szklana, ramka zdjęcia 2 px), zasady zdjęć i wykresów. Wcześniej: Kolor pasa wskaźników zmieniony na ciemniejszy z palety (rgba(17,46,23,0.75)). Wcześniej: Dodana zasada „Układ ze źródła” (pierwszeństwo przed doborem układu, gdy użytkownik załączył slajd źródłowy). Wcześniej: dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
+meta/zmiana: Rząd z operatorem „+” (równa wysokość kart, centrowanie). Wcześniej: Szablony odporne na model pudełkowy Slajdów (width obejmuje padding): pas wskaźników na całą szerokość, ramki zdjęć, kafle logo, karta wyśrodkowana, przekładka, wiersz tabeli z ikoną; nowa sekcja „Model pudełkowy”. Wcześniej: Usunięte sprzeczności: odstęp nagłówek–treść 64 (ramka bez gap), skracanie a dobór układu, zakres skali odstępów, rozmiary ikon, reguły ogólne ze źródłem. Wcześniej: Atom „Źródło w stopce”. Wcześniej: Molekuły „Wiersz listy z ikoną”, „Łącznik pionowy”, „Karta wyśrodkowana” (schemat spółka matka–spółka zależna). Wcześniej: Molekuły „Wiersz składnika” (mały kafelek logo + nazwa) i „Tabela wyników (okresy)”. Wcześniej: Szerokie boxy (Tekst, Wykres w dwóch kolumnach). Wcześniej: Przekładka (zdjęcie, numer części, tytuł) i wiersz tabeli z ikoną. Wcześniej: Ściana logo partnerów (wzorzec i 19 plików logo przyciętych do znaku, folder logo-partnerow). Wcześniej: Nadtytuł (dawniej „eyebrow”), nagłówek stałej wysokości 112 (tytuł 56 lub 48), sekcja „Odstępy i obszar treści” (skala, centrowanie, pojemności), molekuły: karta osoby, ikona z opisem, kolumna z ikoną i listą. Wcześniej: dodane atomy (ikony, punktor, znak plus, odznaka, karta szklana, ramka zdjęcia 2 px), zasady zdjęć i wykresów. Wcześniej: Kolor pasa wskaźników zmieniony na ciemniejszy z palety (rgba(17,46,23,0.75)). Wcześniej: Dodana zasada „Układ ze źródła” (pierwszeństwo przed doborem układu, gdy użytkownik załączył slajd źródłowy). Wcześniej: dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
 
 Źródło wartości: ten plik jest jedynym źródłem wyglądu prezentacji dla skilla. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -233,7 +233,7 @@ Kiedy: kryterium tabeli ma ikonę (np. koszty, płynność, bezpieczeństwo). Ik
 
 ```html
 <div style="display:flex;flex-direction:row;border-top:1px solid [[linia/tabela]]">
-<div style="width:393px;display:flex;flex-direction:row;align-items:center;gap:16px;padding:12px 20px"><img src="{ikona}" alt="" style="width:48px;height:48px"><p style="font-size:24px;line-height:1.25;font-weight:700;color:[[tekst/podstawowy]]">{kryterium}</p></div>
+<div style="width:433px;display:flex;flex-direction:row;align-items:center"><div style="width:20px;height:1px"></div><img src="{ikona}" alt="" style="width:48px;height:48px"><p style="flex:1;padding:12px 20px 12px 16px;font-size:24px;line-height:1.25;font-weight:700;color:[[tekst/podstawowy]]">{kryterium}</p></div>
 <div style="width:566px;display:flex;flex-direction:column;justify-content:center"><p style="padding:10px 20px;font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{A}</p></div>
 <div style="width:665px;display:flex;flex-direction:column;justify-content:center;background:[[tlo/kolumna-funduszu]]"><p style="padding:10px 20px;font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{B}</p></div>
 </div>
@@ -265,12 +265,12 @@ Kiedy: początek nowej części prezentacji (rozdział), zwykle co kilka slajdó
 <section id="divider" style="background:[[tlo/okladka]]">
 <img src="{zdjęcie}" alt="{opis}" style="position:absolute;top:0;left:0;width:1920px;height:1080px;object-fit:cover">
 <div style="position:absolute;top:0;left:0;width:1920px;height:1080px;display:flex;flex-direction:column;background:[[tlo/winieta]]"></div>
-<div style="position:absolute;top:330px;left:128px;width:988px;display:flex;flex-direction:column;gap:16px;background:[[tlo/kolumna-funduszu]];border-radius:40px;padding:48px 56px">
+<div style="position:absolute;top:330px;left:128px;width:1100px;display:flex;flex-direction:column;align-items:center;background:[[tlo/kolumna-funduszu]];border-radius:40px"><div style="height:48px"></div><div style="width:988px;display:flex;flex-direction:column;gap:16px">
 <p style="font-size:96px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{nn}</p>
 <div style="width:120px;height:4px;background:[[akcent/glowny]]"></div>
 <h1 style="font-size:56px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{tytuł}</h1>
 <p style="font-size:32px;line-height:1.3;color:[[tekst/podstawowy]]">{podtytuł}</p>
-</div>
+</div><div style="height:48px"></div></div>
 <img src="{logo}" alt="Logo" style="position:absolute;left:128px;bottom:64px;width:274px;height:20px;object-fit:contain">
 <p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;line-height:1.2;text-align:right;color:[[tekst/podstawowy]]">{nn strony}</p>
 <aside>Wersja design systemu: {meta/wersja}</aside>
@@ -309,7 +309,7 @@ Kiedy: dłuższy opis z nagłówkiem, bez karty. Sekcje układaj w kolumnie szer
 Kiedy: zdjęcie osoby (np. zarządzającego). Pole: zdjęcie kwadratowe lub przycięte do kwadratu, imię i nazwisko w alt. Pozycja stała: x=1504, y=440 (nad paskiem wskaźników, pod podpisem QR).
 
 ```html
-<img src="{portret}" alt="{osoba}" style="position:absolute;left:1504px;top:440px;width:284px;height:284px;border:2px solid [[akcent/glowny]];border-radius:144px;object-fit:cover">
+<div style="position:absolute;left:1504px;top:440px;width:288px;height:288px;background:[[akcent/glowny]];border-radius:144px;display:flex;align-items:center;justify-content:center"><img src="{portret}" alt="{osoba}" style="width:284px;height:284px;border-radius:142px;object-fit:cover"></div>
 ```
 
 ### Pasek wskaźników
@@ -317,9 +317,9 @@ Kiedy: zdjęcie osoby (np. zarządzającego). Pole: zdjęcie kwadratowe lub przy
 Kiedy: 2–4 kluczowe liczby w jednym pasie na całą szerokość. Pierwsza kolumna używa szablonu „kolumna pierwsza”, kolejne „kolumna kolejna” (z pionowym separatorem). `{waga}` to szerokość kolumny względem pozostałych (domyślnie 1; kolumna z dłuższym opisem 1.3–2). Opis wskaźnika: maks. 2 linie (ok. 45 znaków w kolumnie wagi 1, ok. 90 w wagi 2). Jednostka krótka (SRI, %, miesięcy).
 
 ```html
-<div style="position:absolute;left:0px;top:788px;width:1664px;height:176px;padding:0 128px;background:[[tlo/pasek-wskaznikow]];display:flex;flex-direction:row">
+<div style="position:absolute;left:0px;top:788px;width:1920px;height:176px;background:[[tlo/pasek-wskaznikow]];display:flex;flex-direction:row;justify-content:center"><div style="width:1664px;height:176px;display:flex;flex-direction:row">
 {kolumny}
-</div>
+</div></div>
 ```
 
 Kolumna pierwsza:
@@ -371,7 +371,7 @@ Gdy użytkownik załączył slajd źródłowy (.pptx, PDF, obraz), ma dostać sl
 2. **Sprawdź, czy pasuje programowany układ.** Układ z tego pliku (np. „Opis funduszu”, siatka kart, tabela) jest użyteczny tylko wtedy, gdy (a) każdy element źródła ma w nim miejsce i (b) rozmieszczenie stref jest takie samo jak w źródle (te same grupy w tych samych częściach slajdu). Jeśli tak, użyj go i wypełnij pola.
 3. **Jeśli nie pasuje, odtwórz układ ze źródła.** Zachowaj strefy, ich kolejność, grupowanie i proporcje z źródła. Zrób to elementami z tego pliku (kafelek logo, box danych, sekcja tekstowa, wykres, tabela, pas wskaźników) w ich rozmiarach i stylach, a brakujące elementy jako zwykłe bloki tekstu w stylach ze skali typografii. Pozycje dopasuj do marginesów 128 px (boki, góra) i 160 px (dół) oraz do odstępów systemu.
 4. **Czego nie wolno bez prośby użytkownika:** dzielić slajdu na dwa, łączyć dwóch w jeden, przenosić elementu do innej strefy, zmieniać kolejności, zamieniać typu elementu (np. liczba ze źródła w kartę tekstową, tekst ze wskaźnikami w tabelę). Jeśli element ze źródła nie mieści się w układzie (np. za długi tekst), najpierw skróć tekst, nie zmieniaj układu; jeśli to nie wystarcza, zapytaj.
-5. **Reguły ogólne obowiązują też ze źródłem:** zdjęcia w tle tylko na okładce i przekładkach (sekcja 11; tło ze zdjęciem na slajdzie treści zastąp tłem treści i wpisz do raportu), paleta i skala typografii z systemu, obszar treści z sekcji 10 (y 304–920).
+5. **Reguły ogólne obowiązują też ze źródłem:** zdjęcia w tle tylko na okładce i przekładkach (sekcja 12; tło ze zdjęciem na slajdzie treści zastąp tłem treści i wpisz do raportu), paleta i skala typografii z systemu, obszar treści z sekcji 10 (y 304–920).
 6. **Raport:** napisz, którą drogą poszedłeś (programowany układ albo odtworzenie ze źródła) i wymień odstępstwa od źródła (przesunięte elementy, skrócone teksty, brakujące zasoby).
 
 ## 8. Atomy
@@ -444,6 +444,12 @@ Kiedy: między elementami formuły (A + B + C).
 <p style="font-size:56px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">+</p>
 ```
 
+Rząd z operatorem „+”: karty w rzędzie mają jednakową wysokość (`align-items:stretch`), znak „+” jest wyśrodkowany w pionie względem rzędu, a cały rząd podlega zasadom z sekcji „Odstępy i obszar treści” (wyśrodkowanie w pionie, gdy blok jest niższy niż 70% obszaru).
+
+```html
+<div style="display:flex;flex-direction:row;align-items:stretch;gap:16px">{KARTA A}<div style="display:flex;flex-direction:column;justify-content:center"><p style="font-size:56px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">+</p></div>{KARTA B}<div style="display:flex;flex-direction:column;justify-content:center"><p style="font-size:56px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">+</p></div>{KARTA C}</div>
+```
+
 ### Odznaka
 
 Kiedy: krótka etykieta kategorii w rogu slajdu lub nad treścią (np. FUNDUSZ INWESTYCYJNY). Do 3 słów.
@@ -465,11 +471,11 @@ Kiedy: blok treści na zdjęciu (okładka, przekładka) lub gdy zdjęcie jest do
 Kiedy: zdjęcie osoby lub ilustracja w treści. Limonkowa linia 2 px. Kółko (średnica {d}, zdjęcie {d} minus 4 px, promień połowa d) lub prostokąt (promień 24 px).
 
 ```html
-<img src="{zdjęcie}" alt="{opis}" style="width:{d-4}px;height:{d-4}px;border:2px solid [[akcent/glowny]];border-radius:{d/2}px;object-fit:cover">
+<div style="width:{d}px;height:{d}px;background:[[akcent/glowny]];border-radius:{d/2}px;display:flex;align-items:center;justify-content:center"><img src="{zdjęcie}" alt="{opis}" style="width:{d-4}px;height:{d-4}px;border-radius:{d/2-2}px;object-fit:cover"></div>
 ```
 
 ```html
-<img src="{zdjęcie}" alt="{opis}" style="width:{szer-4}px;height:{wys-4}px;border:2px solid [[akcent/glowny]];border-radius:24px;object-fit:cover">
+<div style="width:{szer}px;height:{wys}px;background:[[akcent/glowny]];border-radius:24px;display:flex;align-items:center;justify-content:center"><img src="{zdjęcie}" alt="{opis}" style="width:{szer-4}px;height:{wys-4}px;border-radius:22px;object-fit:cover"></div>
 ```
 
 ## 9. Molekuły
@@ -482,7 +488,7 @@ Kiedy: zarządzający, zespół, doradcy: 2–4 osoby obok siebie. Pola: zdjęci
 
 ```html
 <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:40px">
-<img src="{zdjęcie}" alt="{imię i nazwisko}" style="width:196px;height:196px;border:2px solid [[akcent/glowny]];border-radius:100px;object-fit:cover">
+<div style="width:200px;height:200px;background:[[akcent/glowny]];border-radius:100px;display:flex;align-items:center;justify-content:center"><img src="{zdjęcie}" alt="{imię i nazwisko}" style="width:196px;height:196px;border-radius:98px;object-fit:cover"></div>
 <p style="font-size:30px;font-weight:700;line-height:1.2;text-align:center;color:[[tekst/tytul]]">{imię i nazwisko}</p>
 <p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;line-height:1.3;text-align:center;color:[[akcent/glowny]]">{rola}</p>
 <div style="width:100%;border-top:1px solid [[linia/karta]]"></div>
@@ -523,7 +529,7 @@ Pojemność: w rzędzie po 3 (padding 40) pozycja ma 33 znaki w linii; w rzędzi
 
 ### Ściana logo partnerów
 
-Kiedy: lista partnerów, dystrybutorów lub towarzystw (do 20 logo). Pola: logo z biblioteki (poniżej), nadtytuł i tytuł nagłówka. Logo bierz z biblioteki, nie z pamięci; logo spoza biblioteki wgraj od użytkownika. Kolejność alfabetyczna, chyba że brief mówi inaczej. Pięć kafli w rzędzie, ostatni niepełny rząd wyśrodkowany. Kafel 307×112 (padding 20, pole kafla 267×72, logo w polu 227×64 (object-fit contain), promień 14, tło tlo/kafelek-logo), odstęp 32. Rzędy: 1–5 logo 1 rząd, 6–10 dwa, 11–15 trzy, 16–20 cztery (wysokość 544). Więcej niż 20: zgłoś i zapytaj. Cała ściana jest blokiem w obszarze treści (sekcja „Odstępy i obszar treści”), wyśrodkowanym w pionie.
+Kiedy: lista partnerów, dystrybutorów lub towarzystw (do 20 logo). Pola: logo z biblioteki (poniżej), nadtytuł i tytuł nagłówka. Logo bierz z biblioteki, nie z pamięci; logo spoza biblioteki wgraj od użytkownika. Kolejność alfabetyczna, chyba że brief mówi inaczej. Pięć kafli w rzędzie, ostatni niepełny rząd wyśrodkowany. Kafel 307×112 (logo w polu 227×64, object-fit contain, wyśrodkowane, promień 14, tło tlo/kafelek-logo), odstęp 32. Rzędy: 1–5 logo 1 rząd, 6–10 dwa, 11–15 trzy, 16–20 cztery (wysokość 544). Więcej niż 20: zgłoś i zapytaj. Cała ściana jest blokiem w obszarze treści (sekcja „Odstępy i obszar treści”), wyśrodkowanym w pionie.
 
 Adres logo: `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/logo-partnerow/{plik}.svg`. Pliki: allianz, blackrock, caspar, erste-tfi, esaliens, fidelity-international, franklin-templeton, generali-investments, ing, investors-tfi, ipopema, pzu-inwestycje, quercus, rockbridge, schroders, skarbiec, superfund, uniqa, vig-c-quadrat.
 
@@ -534,7 +540,7 @@ Adres logo: `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main
 Kafel:
 
 ```html
-<div style="width:267px;height:72px;padding:20px;background:[[tlo/kafelek-logo]];border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="{logo}" alt="{nazwa}" style="width:227px;height:64px;object-fit:contain"></div>
+<div style="width:307px;height:112px;background:[[tlo/kafelek-logo]];border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="{logo}" alt="{nazwa}" style="width:227px;height:64px;object-fit:contain"></div>
 ```
 
 ### Wiersz składnika
@@ -542,7 +548,7 @@ Kafel:
 Kiedy: lista składników, partnerów lub funduszy z logo i nazwą (np. skład portfela). Pola: logo z biblioteki (folder logo-partnerow), nazwa. Małe kafelki logo 144×32 w polu 144×32 z paddingiem 8 (razem 160×48), odstęp między wierszami 16. Nazwa 1 linia do ok. 53 znaków przy szerokości 680 px (kolumna 864 px); dłuższa zawija się do 2 linii (wiersz 65 px).
 
 ```html
-<div style="display:flex;flex-direction:row;align-items:center;gap:24px"><div style="width:144px;height:32px;padding:8px;background:[[tlo/kafelek-logo]];border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="{logo}" alt="{nazwa}" style="width:144px;height:32px;object-fit:contain"></div><p style="width:680px;font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{nazwa}</p></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px"><div style="width:160px;height:48px;background:[[tlo/kafelek-logo]];border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="{logo}" alt="{nazwa}" style="width:144px;height:32px;object-fit:contain"></div><p style="width:680px;font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{nazwa}</p></div>
 ```
 
 ### Tabela wyników (okresy)
@@ -571,7 +577,7 @@ Kolumna z wierszami kończy się: `<div style="border-bottom:1px solid [[linia/k
 Kiedy: element schematu lub podsumowania (np. spółka matka, spółka zależna), treść wyśrodkowana. Rama jak box danych, szerokość 648 (kolumna 728 z paddingiem 40), padding 32px 40px, gap 16. Wewnątrz: etykieta bloku, nazwa (Tytuł karty), odznaka, logo, liczba KPI (72 px) wyśrodkowane (`align-items:center`, `text-align:center`).
 
 ```html
-<div style="width:648px;display:flex;flex-direction:column;align-items:center;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:32px 40px">{ZAWARTOŚĆ}</div>
+<div style="width:728px;display:flex;flex-direction:column;align-items:center;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px"><div style="height:32px"></div><div style="width:648px;display:flex;flex-direction:column;align-items:center;gap:16px">{ZAWARTOŚĆ}</div><div style="height:32px"></div></div>
 ```
 
 ### Łącznik pionowy
@@ -611,11 +617,15 @@ Szablon rzędu boxów:
 <div style="display:flex;flex-direction:row;gap:32px">{BOXY}</div>
 ```
 
-## 11. Zdjęcia i wykresy
+## 11. Model pudełkowy w Slajdach
+
+W Claude Slides `width` i `height` obejmują padding i ramkę (potwierdzone na wyniku: pas z `width:1664px` i `padding:0 128px` miał 1664 px razem z paddingiem). Dlatego element o stałej szerokości lub wysokości nie ma paddingu ani ramki na tym samym elemencie: odstępy robią elementy wewnętrzne (przekładki `div` o stałej wysokości lub szerokości), a ramki zdjęć to tło limonkowe z wewnętrznym obrazem. Szablony w tym pliku są tak napisane, żeby wyglądały tak samo w obu modelach. Elementy z `flex:1` mogą mieć padding. Nie dopisuj paddingu do elementu ze stałym `width` lub `height`.
+
+## 12. Zdjęcia i wykresy
 
 - **Zdjęcia w tle** tylko na okładce i przekładkach. Na pozostałych slajdach tylko na wyraźną prośbę osoby tworzącej prezentację i tylko z plików wystarczającej jakości (w pełnym rozmiarze slajdu min. 1920 px szerokości). Jeśli plik jest za mały, zgłoś to w raporcie i użyj gładkiego tła.
 - **Wykresy i diagramy złożone nie są odrysowywane.** Wykres ze źródła wstaw jako obraz ze źródła, w ramce o stałych wymiarach, bez przeróbki danych i kolorów, i wpisz to do raportu. Wyjątek: struktura procentowa o kilku wartościach (box Wykres lub wykres poziomy), gdy liczby są podane w tekście źródła i skill przepisuje je dosłownie.
 
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-04.13)
+KONIEC PLIKU (meta/wersja 2026-11-04.15)
