@@ -1,8 +1,8 @@
 # Design system prezentacji
 
-meta/wersja: **2026-11-04.3**
+meta/wersja: **2026-11-04.4**
 
-meta/zmiana: Dodana zasada „Układ ze źródła” (pierwszeństwo przed doborem układu, gdy użytkownik załączył slajd źródłowy). Wcześniej: dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
+meta/zmiana: Kolor pasa wskaźników zmieniony na ciemniejszy z palety (rgba(17,46,23,0.75)). Wcześniej: Dodana zasada „Układ ze źródła” (pierwszeństwo przed doborem układu, gdy użytkownik załączył slajd źródłowy). Wcześniej: dodane zasady zasobów ze źródła i mapowania slajdów 1:1. Wcześniej: dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
 
 Źródło wartości: plik projektowy właściciela (Figma). Ten plik jest odczytywalną kopią dla skilla do prezentacji. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -30,7 +30,7 @@ W szablonach zastępuj `[[rola]]` wartością z tabeli. `[[rola@0]]` to ten sam 
 | linia/tabela | rgba(192,212,54,0.35) | linie tabeli |
 | linia/karta | rgba(247,252,246,0.45) | linie w kartach |
 | linia/ramka-okladki | rgba(192,212,54,0.55) | ramka okładki |
-| tlo/pasek-wskaznikow | #34493D | pas wskaźników na całą szerokość slajdu |
+| tlo/pasek-wskaznikow | rgba(17,46,23,0.75) | pas wskaźników na całą szerokość slajdu (to samo co tlo/kolumna-funduszu) |
 | tlo/stopka-pas | #112E17 | ciemny pas stopki |
 
 ## 2. Wymiary (px)
@@ -305,4 +305,4 @@ Gdy użytkownik załączył slajd źródłowy (.pptx, PDF, obraz), ma dostać sl
 
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-04.3)
+KONIEC PLIKU (meta/wersja 2026-11-04.4)
