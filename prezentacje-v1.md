@@ -201,3 +201,7 @@ Kiedy: Wyłącznie pierwszy slajd. Pola: eyebrow, tytuł (max 2 linie), podtytu�
 <aside>Wersja design systemu: {meta/wersja}</aside>
 </section>
 ```
+
+---
+
+KONIEC PLIKU (meta/wersja 2026-11-03.2)
