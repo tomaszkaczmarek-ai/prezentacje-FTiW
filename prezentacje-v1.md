@@ -1,8 +1,8 @@
 # Design system prezentacji
 
-meta/wersja: **2026-11-03.2**
+meta/wersja: **2026-11-04.1**
 
-meta/zmiana: Dodany wzorzec: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
+meta/zmiana: Dodane elementy i układ „Opis funduszu” (kafelek logo partnera, QR z podpisem, sekcje tekstowe, portret w kółku, pasek wskaźników, stopka z pasem) oraz zasady doboru układu. Wcześniej: Okładka slajdu. Poprzednio: zamknięta paleta (6 kolorów), wzorce: nagłówek, stopka, boxy danych, wykres poziomy, tabela.
 
 Źródło wartości: plik projektowy właściciela (Figma). Ten plik jest odczytywalną kopią dla skilla do prezentacji. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -30,6 +30,8 @@ W szablonach zastępuj `[[rola]]` wartością z tabeli. `[[rola@0]]` to ten sam 
 | linia/tabela | rgba(192,212,54,0.35) | linie tabeli |
 | linia/karta | rgba(247,252,246,0.45) | linie w kartach |
 | linia/ramka-okladki | rgba(192,212,54,0.55) | ramka okładki |
+| tlo/pasek-wskaznikow | #34493D | pas wskaźników na całą szerokość slajdu |
+| tlo/stopka-pas | #112E17 | ciemny pas stopki |
 
 ## 2. Wymiary (px)
 
@@ -50,7 +52,12 @@ W szablonach zastępuj `[[rola]]` wartością z tabeli. `[[rola@0]]` to ten sam 
 | linia/tabeli | 1 |
 | odstep liter eyebrow | 5 |
 | odstep liter etykieta | 3 |
-| odstęp ramy treści (nagłówek–treść) | 32 (przy tabeli 28) |
+| odstęp ramy treści (nagłówek–treść) | 32 (przy tabeli 28, w układzie Opis funduszu 24) |
+| kafelek logo partnera | 360×112, promień 14 |
+| kafelek QR | 144×144, promień 12 |
+| portret w kółku | średnica 288 (zdjęcie 272 + ramka 8 px w kolorze akcent/glowny) |
+| pas wskaźników | wysokość 176, od y=788 do 964 |
+| pas stopki | wysokość 116, od y=964 |
 
 ## 3. Typografia
 
@@ -202,6 +209,82 @@ Kiedy: Wyłącznie pierwszy slajd. Pola: eyebrow, tytuł (max 2 linie), podtytu�
 </section>
 ```
 
+### Kafelek logo partnera
+
+Kiedy: logo partnera lub TFI w nagłówku, po prawej. Pole: plik logo (wgrany przez użytkownika, najlepiej SVG/PNG na przezroczystym tle). Pozycja stała: x=1224, y=128.
+
+```html
+<div style="position:absolute;left:1224px;top:128px;width:360px;height:112px;background:[[tlo/kafelek-logo]];border-radius:14px;display:flex;flex-direction:column;justify-content:center;align-items:center"><img src="{logo}" alt="{nazwa}" style="width:328px;height:80px;object-fit:contain"></div>
+```
+
+### QR z podpisem
+
+Kiedy: odnośnik do strony funduszu lub materiałów. Pola: kod QR (obraz od użytkownika), podpis (do 2 linii, twarde spacje). Pozycja stała: kod x=1648 y=128, podpis x=1552 y=284.
+
+```html
+<div style="position:absolute;left:1648px;top:128px;width:144px;height:144px;background:[[tlo/kafelek-logo]];border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center"><img src="{qr}" alt="Kod QR" style="width:128px;height:128px;object-fit:contain"></div>
+<p style="position:absolute;left:1552px;top:284px;width:240px;font-size:24px;line-height:1.2;text-align:right;text-decoration:underline;color:[[tekst/podstawowy]]">{podpis}</p>
+```
+
+### Sekcja tekstowa
+
+Kiedy: dłuższy opis z nagłówkiem, bez karty. Sekcje układaj w kolumnie szerokości 1312 px z odstępem 20 px: `<div style="display:flex;flex-direction:column;gap:20px;width:1312px">` … sekcje … `</div>`. Pojemność kolumny: 2–3 sekcje, łącznie do 12 linii akapitów (ok. 1000 znaków, ok. 92 znaki w linii).
+
+```html
+<div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:24px;line-height:1.3;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:[[tekst/podstawowy]]">{naglowek}</p><p style="font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{akapit}</p></div>
+```
+
+### Portret w kółku
+
+Kiedy: zdjęcie osoby (np. zarządzającego). Pole: zdjęcie kwadratowe lub przycięte do kwadratu, imię i nazwisko w alt. Pozycja stała: x=1504, y=440 (nad paskiem wskaźników, pod podpisem QR).
+
+```html
+<img src="{portret}" alt="{osoba}" style="position:absolute;left:1504px;top:440px;width:272px;height:272px;border:8px solid [[akcent/glowny]];border-radius:144px;object-fit:cover">
+```
+
+### Pasek wskaźników
+
+Kiedy: 2–4 kluczowe liczby w jednym pasie na całą szerokość. Pierwsza kolumna używa szablonu „kolumna pierwsza”, kolejne „kolumna kolejna” (z pionowym separatorem). `{waga}` to szerokość kolumny względem pozostałych (domyślnie 1; kolumna z dłuższym opisem 1.3–2). Opis wskaźnika: maks. 2 linie (ok. 45 znaków w kolumnie wagi 1, ok. 90 w wagi 2). Jednostka krótka (SRI, %, miesięcy).
+
+```html
+<div style="position:absolute;left:0px;top:788px;width:1664px;height:176px;padding:0 128px;background:[[tlo/pasek-wskaznikow]];display:flex;flex-direction:row">
+{kolumny}
+</div>
+```
+
+Kolumna pierwsza:
+
+```html
+<div style="flex:{waga};display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 32px 0 0"><div style="display:flex;flex-direction:row;align-items:baseline;gap:12px"><p style="font-size:72px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{jednostka}</p></div><p style="font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{opis}</p></div>
+```
+
+Kolumna kolejna:
+
+```html
+<div style="flex:{waga};display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 32px;border-left:1px solid [[linia/karta]]"><div style="display:flex;flex-direction:row;align-items:baseline;gap:12px"><p style="font-size:72px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{jednostka}</p></div><p style="font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{opis}</p></div>
+```
+
+### Stopka z pasem
+
+Kiedy: układy z paskiem wskaźników (pas stopki idzie zaraz za tłem smug, przed treścią). Pas, potem logo i numer jak w „Stopka slajdu”.
+
+```html
+<div style="position:absolute;left:0px;top:964px;width:1920px;height:116px;background:[[tlo/stopka-pas]]"></div>
+```
+
+### Układ: Opis funduszu
+
+Kiedy: dużo tekstu opisowego (2–3 sekcje, do ok. 1000 znaków) plus 2–4 wskaźniki; opcjonalnie logo partnera, QR i portret. Kolejność elementów w sekcji slajdu treści: 1) trzy smugi światła, 2) pas stopki, 3) nagłówek slajdu (eyebrow + tytuł, szerokość 1060, odstęp ramy 24), 4) kafelek logo partnera, 5) QR z podpisem, 6) kolumna sekcji tekstowych, 7) portret, 8) pasek wskaźników, 9) logo i numer strony. Elementy opcjonalne pomijaj, jeśli nie ma ich w materiale; pozostałe zostają na swoich miejscach. Rama slajdu jak „Slajd treści (rama)” z odstępem 24.
+
+## 5. Dobór układu
+
+- **Dużo tekstu opisowego i kilka liczb:** układ „Opis funduszu”. Pojemność: patrz opisy elementów. Pełny tekst zachowaj, jeśli mieści się; jeśli nie, skróć minimalnie i wpisz do raportu.
+- **Wiele krótkich faktów (do ok. 35 słów na pole):** siatka kart (box danych).
+- **Porównanie dwóch opcji według kryteriów:** tabela porównawcza.
+- **Jedna liczba lub struktura procentowa:** box danych Liczba lub Wykres.
+- **Nic nie ginie:** każdy element źródła (zdjęcie, QR, link, logo, podpis) musi dostać miejsce na slajdzie. Jeśli żaden układ nie ma na niego miejsca, zgłoś to użytkownikowi przed budową slajdu, zamiast go pomijać.
+- **Układ dobieraj do treści, nie treść do układu.** Nie skracaj tekstu tylko dlatego, że wybrany układ jest za ciasny; wybierz układ o większej pojemności.
+
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-03.2)
+KONIEC PLIKU (meta/wersja 2026-11-04.1)
