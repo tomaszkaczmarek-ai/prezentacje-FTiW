@@ -90,6 +90,29 @@ Kiedy: początek nowej części prezentacji (rozdział), zwykle co kilka slajdó
 
 Pojemność tytułu: 2 linie po ok. 31 znaków (56 px pogrubiony, szerokość 988 px w karcie), do ok. 60 znaków łącznie; dłuższy skróć i wpisz do raportu. Podtytuł: 1 linia do ok. 55 znaków. Karta ma wysokość naturalną (ok. 420 px przy tytule 2-liniowym i podtytule).
 
+### Zamknięcie
+
+Kiedy: ostatni slajd prezentacji (hasło, kontakt, adres www). Pola: logo białe (całej spółki, jedna wersja bez kafelka; ten sam plik co w stopce), hasło (max 2 linie), do 3 wierszy kontaktu (ikona z biblioteki + tekst: adres www, e-mail, telefon), logo w stopce i numer strony. Tło tlo/okladka z ramką jak na okładce, bez zdjęcia i bez smug. Pojemność hasła: 2 linie po ok. 31 znaków (84 px pogrubiony); wiersz kontaktu do ok. 60 znaków (32 px). Ikony: świat (www), kontakt (e-mail, telefon).
+
+```html
+<section id="closing" style="background:[[tlo/okladka]]">
+<div style="position:absolute;top:48px;left:48px;width:1824px;height:984px;display:flex;flex-direction:column;border:1px solid [[linia/ramka-okladki]]"></div>
+<img src="{logo białe}" alt="Logo" style="position:absolute;top:120px;left:128px;width:374px;height:28px;object-fit:contain">
+<div style="position:absolute;top:469px;left:128px;width:120px;height:4px;background:[[akcent/glowny]]"></div>
+<h1 style="position:absolute;top:505px;left:128px;width:1470px;font-size:84px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{hasło}</h1>
+<div style="position:absolute;top:760px;left:128px;width:1200px;display:flex;flex-direction:column;gap:16px">{WIERSZE KONTAKTU}</div>
+<img src="{logo}" alt="Logo" style="position:absolute;left:128px;bottom:64px;width:274px;height:20px;object-fit:contain">
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;line-height:1.2;text-align:right;color:[[tekst/podstawowy]]">{nn strony}</p>
+<aside>Wersja design systemu: {meta/wersja}</aside>
+</section>
+```
+
+Wiersz kontaktu:
+
+```html
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px"><img src="{ikona limonka 40}" alt="" style="width:40px;height:40px"><p style="font-size:32px;line-height:1.3;color:[[tekst/podstawowy]]">{tekst}</p></div>
+```
+
 ### Stopka z pasem
 
 Kiedy: układy z paskiem wskaźników (pas stopki idzie zaraz za tłem smug, przed treścią). Pas, potem logo i numer jak w „Stopka slajdu”.

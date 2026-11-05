@@ -20,7 +20,7 @@ Kiedy: Jedna kluczowa liczba z jednostką i jednozdaniowym opisem. gap 20, paddi
 
 ```html
 <p style="font-size:24px;line-height:1.4;letter-spacing:5px;text-transform:uppercase;color:[[tekst/podstawowy]]">{etykieta}</p>
-<div style="display:flex;flex-direction:row;align-items:baseline;gap:16px"><p style="font-size:96px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{jednostka}</p></div>
+<div style="display:flex;flex-direction:row;align-items:baseline;gap:16px"><p style="font-size:96px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{jednostka}</p></div>
 <div style="border-top:1px solid [[linia/karta]]"></div>
 <p style="font-size:26px;line-height:1.4;color:[[tekst/podstawowy]]">{opis}</p>
 ```
@@ -31,7 +31,7 @@ Kiedy: jedna kluczowa liczba na slajdzie z innymi boxami (np. pod rzędem kart),
 
 ```html
 <div style="display:flex;flex-direction:row;align-items:center;gap:32px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:24px 40px">
-<div style="display:flex;flex-direction:row;align-items:baseline;gap:12px"><p style="font-size:72px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{jednostka}</p></div>
+<div style="display:flex;flex-direction:row;align-items:baseline;gap:12px"><p style="font-size:72px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{jednostka}</p></div>
 <div style="width:1px;align-self:stretch;background:[[linia/karta]]"></div>
 <p style="flex:1;font-size:26px;line-height:1.35;color:[[tekst/podstawowy]]">{opis}</p>
 </div>
@@ -39,11 +39,11 @@ Kiedy: jedna kluczowa liczba na slajdzie z innymi boxami (np. pod rzędem kart),
 
 ### Box danych – Typ=Tekst
 
-Kiedy: Krótki opis z etykietą, do ok. 250 znaków. gap 8, padding 32px 40px.
+Kiedy: Krótki opis z etykietą, do ok. 250 znaków (jeden lub dwa akapity). gap 8, padding 32px 40px. Etykieta ma styl „Etykieta boxu” (24 px, pogrubiona, zwykłe litery, biała). Akapity w boxach jednego rzędu zaczynają się na tej samej wysokości: pole etykiety ma wysokość {wys etykiety} = liczba linii najdłuższej etykiety w rzędzie × 32 (ta sama we wszystkich boxach rzędu). Odstęp między akapitami 16. Pojemność etykiety: ok. 31 znaków w linii w rzędzie po 3 boxy, ok. 22 w rzędzie po 4, ok. 52 przy 2 boxach.
 
 ```html
-<p style="font-size:24px;line-height:1.3;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:[[tekst/podstawowy]]">{etykieta}</p>
-<p style="font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{treść}</p>
+<div style="height:{wys etykiety}px"><p style="font-size:24px;line-height:32px;font-weight:700;color:[[tekst/tytul]]">{etykieta}</p></div>
+<div style="display:flex;flex-direction:column;gap:16px"><p style="font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{akapit 1}</p><p style="font-size:24px;line-height:1.35;color:[[tekst/podstawowy]]">{akapit 2}</p></div>
 ```
 
 ### Box danych – Typ=Wyliczenie
@@ -51,7 +51,7 @@ Kiedy: Krótki opis z etykietą, do ok. 250 znaków. gap 8, padding 32px 40px.
 Kiedy: Numerowana karta z tytułem i dokładnie trzema punktami. gap 16, padding 32px 48px.
 
 ```html
-<div style="display:flex;flex-direction:row;align-items:center;gap:24px"><p style="font-size:56px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{nn}</p><h3 style="font-size:30px;font-weight:700;line-height:1.2;color:[[tekst/tytul]]">{tytuł}</h3></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px"><p style="font-size:56px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{nn}</p><h3 style="font-size:30px;font-weight:700;line-height:1.2;color:[[tekst/tytul]]">{tytuł}</h3></div>
 <div style="display:flex;flex-direction:column">
 <div style="border-top:1px solid [[linia/karta]];padding:8px 0"><p style="font-size:26px;line-height:1.3;color:[[tekst/podstawowy]]">{punkt}</p></div>
 (… dokładnie trzy punkty)
@@ -64,7 +64,7 @@ Kiedy: Struktura procentowa, do 5 wierszy. gap 16, padding 28px 40px. Najpierw e
 
 ```html
 <div style="display:flex;flex-direction:column;gap:8px">
-<div style="display:flex;flex-direction:row;align-items:center;gap:16px"><p style="width:104px;font-size:32px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{84&#160;%}</p><p style="flex:1;font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{opis}</p></div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px"><p style="width:104px;font-size:32px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{84&#160;%}</p><p style="flex:1;font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{opis}</p></div>
 <div style="height:8px;background:[[tlo/tor-paska]];border-radius:4px"><div style="width:{udział}%;height:8px;background:[[akcent/glowny]];border-radius:4px"></div></div>
 </div>
 ```
@@ -128,7 +128,7 @@ Kiedy: kryterium tabeli ma ikonę (np. koszty, płynność, bezpieczeństwo). Ik
 
 ### Pasek wskaźników
 
-Kiedy: 2–4 kluczowe liczby w jednym pasie na całą szerokość. Przy jednej liczbie nie używaj pasa: użyj „Box danych – Typ=Liczba” w rzędzie lub „Typ=Liczba szeroki”. Pierwsza kolumna używa szablonu „kolumna pierwsza”, kolejne „kolumna kolejna” (z pionowym separatorem). `{waga}` to szerokość kolumny względem pozostałych (domyślnie 1; kolumna z dłuższym opisem 1.3–2). Opis wskaźnika: maks. 2 linie (ok. 45 znaków w kolumnie wagi 1, ok. 90 w wagi 2). Jednostka krótka (SRI, %, miesięcy).
+Kiedy: 2–4 kluczowe liczby w jednym pasie na całą szerokość. Przy jednej liczbie nie używaj pasa: użyj „Box danych – Typ=Liczba” w rzędzie lub „Typ=Liczba szeroki”. Pierwsza kolumna używa szablonu „kolumna pierwsza”, kolejne „kolumna kolejna” (z pionowym separatorem). `{waga}` to szerokość kolumny względem pozostałych (domyślnie 1; kolumna z dłuższym opisem 1.3–2). Opis wskaźnika: maks. 2 linie (ok. 45 znaków w kolumnie wagi 1, ok. 90 w wagi 2). Jednostka krótka (SRI, %, miesięcy). Liczby we wszystkich kolumnach leżą na jednej linii (stała wysokość liczby 80 i opisu 60); etykietę wskaźnika zapisz pogrubioną na początku opisu.
 
 ```html
 <div style="position:absolute;left:0px;top:788px;width:1920px;height:176px;background:[[tlo/pasek-wskaznikow]];display:flex;flex-direction:row;justify-content:center"><div style="width:1664px;height:176px;display:flex;flex-direction:row">
@@ -139,13 +139,13 @@ Kiedy: 2–4 kluczowe liczby w jednym pasie na całą szerokość. Przy jednej l
 Kolumna pierwsza:
 
 ```html
-<div style="flex:{waga};display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 32px 0 0"><div style="display:flex;flex-direction:row;align-items:baseline;gap:12px"><p style="font-size:72px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{jednostka}</p></div><p style="font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{opis}</p></div>
+<div style="flex:{waga};display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 32px 0 0"><div style="height:80px;display:flex;flex-direction:row;align-items:baseline;gap:12px"><p style="font-size:72px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{jednostka}</p></div><div style="height:60px"><p style="font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{opis}</p></div></div>
 ```
 
 Kolumna kolejna:
 
 ```html
-<div style="flex:{waga};display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 32px;border-left:1px solid [[linia/karta]]"><div style="display:flex;flex-direction:row;align-items:baseline;gap:12px"><p style="font-size:72px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[akcent/glowny]]">{jednostka}</p></div><p style="font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{opis}</p></div>
+<div style="flex:{waga};display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 32px;border-left:1px solid [[linia/karta]]"><div style="height:80px;display:flex;flex-direction:row;align-items:baseline;gap:12px"><p style="font-size:72px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{liczba}</p><p style="font-size:40px;font-weight:700;line-height:1.1;color:[[tekst/tytul]]">{jednostka}</p></div><div style="height:60px"><p style="font-size:24px;line-height:1.25;color:[[tekst/podstawowy]]">{opis}</p></div></div>
 ```
 
 ### Układ: Opis funduszu

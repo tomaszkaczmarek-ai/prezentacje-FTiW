@@ -183,13 +183,13 @@ Pojemność w rzędzie po 3 (padding 40): tytuł 26 znaków w linii, opis 32 zna
 
 ### Box z logo
 
-Kiedy: podmiot, partner lub produkt, który ma logo (spółki grupy, partnerzy, fundusze). Pola: logo (biblioteka partnerów lub plik od użytkownika), tytuł (nazwa), opcjonalnie opis i dodatkowy znak (np. drugie małe logo). Logo stoi na białym kafelku u góry boxu; kafelek ma wysokość 96 i szerokość boxu, logo 240×64 (contain). Boxy w rzędzie mają jednakową wysokość.
+Kiedy: podmiot, partner lub produkt, który ma logo (spółki grupy, partnerzy, fundusze). Pola: logo (biblioteka partnerów lub plik od użytkownika), tytuł (nazwa), opcjonalnie opis i dodatkowy znak (np. drugie małe logo). Logo stoi na białym kafelku u góry boxu; kafelek ma wysokość 96 i szerokość boxu, logo 240×64 (contain). Tytuł i opis są wyśrodkowane w poziomie. Boxy w rzędzie mają jednakową wysokość.
 
 ```html
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:32px">
-<div style="height:96px;display:flex;flex-direction:row;align-items:center;justify-content:center;background:[[tlo/kafelek-logo]];border-radius:14px"><img src="{logo}" alt="{nazwa}" style="width:240px;height:64px;object-fit:contain"></div>
-<p style="font-size:30px;font-weight:700;line-height:1.2;color:[[tekst/tytul]]">{tytuł}</p>
-<p style="font-size:26px;line-height:1.35;color:[[tekst/podstawowy]]">{opis}</p>
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:16px;background:[[tlo/karta]];border-top:4px solid [[akcent/glowny]];border-radius:0 0 40px 40px;padding:32px">
+<div style="width:100%;height:96px;display:flex;flex-direction:row;align-items:center;justify-content:center;background:[[tlo/kafelek-logo]];border-radius:14px"><img src="{logo}" alt="{nazwa}" style="width:240px;height:64px;object-fit:contain"></div>
+<p style="font-size:30px;font-weight:700;line-height:1.2;text-align:center;color:[[tekst/tytul]]">{tytuł}</p>
+<p style="font-size:26px;line-height:1.35;text-align:center;color:[[tekst/podstawowy]]">{opis}</p>
 </div>
 ```
 

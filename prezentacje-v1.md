@@ -2,7 +2,7 @@
 
 meta/wersja: **2026-11-05.1**
 
-meta/zmiana: Przekładka z równą ciemną warstwą na zdjęciu (tlo/przekladka). Niepełny ostatni rząd boxów o tej samej szerokości i wyśrodkowany; Rząd z „+” bez opisów w źródle zostaje z małymi kartami. Wcześniej: Box z logo, Box Liczba szeroki (zamiast pasa przy jednej liczbie), Sekcje w dwóch kolumnach (rola Tekst opisowy), wyśrodkowany tekst w kartach diagramu cyklu, wykres jako obraz skalowany do obszaru. Wcześniej: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
+meta/zmiana: Z uwag w Figmie: liczby białe, Box Tekst z etykietą zwykłymi literami i wyrównanymi akapitami, Box z logo wyśrodkowany, Pasek wskaźników z liczbami na jednej linii, wzorzec Zamknięcie, reguły wyrównania do prawej i odstępów. Wcześniej: Przekładka z równą ciemną warstwą na zdjęciu (tlo/przekladka). Niepełny ostatni rząd boxów o tej samej szerokości i wyśrodkowany; Rząd z „+” bez opisów w źródle zostaje z małymi kartami. Wcześniej: Box z logo, Box Liczba szeroki (zamiast pasa przy jednej liczbie), Sekcje w dwóch kolumnach (rola Tekst opisowy), wyśrodkowany tekst w kartach diagramu cyklu, wykres jako obraz skalowany do obszaru. Wcześniej: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
 
 Ten plik jest indeksem i jedynym źródłem zasad oraz tokenów wyglądu (kolory, wymiary, typografia, odstępy). Szablony HTML wzorców są w trzech plikach z sekcji „Pliki wzorców”. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -36,6 +36,7 @@ Każdy slajd źródła klasyfikujesz do jednej roli według sygnałów (liczba i
 | Opis i grafika | akapit lub dwa i jedna grafika ze źródła (zrzut ekranu, schemat, infografika, nie zdjęcie stockowe) | Układ: Opis i grafika | uklady |
 | Grafiki z podpisem | 2–3 grafiki (ekrany, produkty, dokumenty), każda z krótkim podpisem | Układ: Grafiki z podpisem | uklady |
 | Opis i lista z ikonami | akapit opisu i 2–5 faktów jednozdaniowych z ikonami | Wiersz listy z ikoną + Sekcja tekstowa (lub Karta wyśrodkowana obok) | elementy |
+| Zamknięcie | ostatni slajd: hasło, adres www, kontakt, logo | Zamknięcie | szkielet, elementy |
 | Ściana logo | 6 lub więcej logo bez długich opisów | Ściana logo partnerów | elementy |
 
 Role bez wzorca: patrz „Potrzebne wzorce”.
@@ -64,7 +65,8 @@ Pobieraj tylko te pliki, których wymagają role użyte w prezentacji (kolumna �
 
 Lista prowadzona przez właściciela systemu z raportów użytkowników. Dopóki wzorca nie ma, użyj najbliższego i zgłoś w raporcie.
 
-- Zamknięcie (kontakt, adres www, zdjęcie zespołu).
+- Tekst prawny (nota prawna, zastrzeżenia: długi, gęsty tekst w kilku akapitach).
+- Slajd z tabelą pozycji (np. 10 największych pozycji: wiersze o równych odstępach).
 
 ## Role kolorów
 
@@ -136,6 +138,7 @@ Font: Montserrat. Face: https://fonts.googleapis.com/css2?family=Montserrat:wght
 | Jednostka | 40 | 700 | 1,1 |  |
 | Podtytuł | 32 | 400 | 1,3 |  |
 | Podtytuł – pogrubiony | 32 | 700 | 1,3 |  |
+| Etykieta boxu | 24 | 700 | 32 px | zwykłe litery, kolor tekst/tytul (etykieta w boxie Tekst) |
 | Tytuł karty | 30 | 700 | 1,2 |  |
 | Tekst karty | 26 | 400 | 1,35 |  |
 | Tekst karty – pogrubiony | 26 | 700 | 1,25 |  |
@@ -152,6 +155,9 @@ Cel: brak pustych połaci, brak nachodzenia elementów, takie same odstępy na k
 - **Standardowy odstęp między boxami i blokami: 32 px** (w pionie i w poziomie). Wewnątrz boxu 16 px między elementami, 12 px między pozycjami listy.
 - **Nagłówek:** stała wysokość 112 (y 128–240). Treść zaczyna się najwyżej w y=304 (odstęp od nagłówka min. 64).
 - **Obszar treści:** x 128–1792 (1664), y 304–920 (616). Poniżej, do y=964, wolny margines. W układach z paskiem wskaźników (od y=788) obszar kończy się 24 px nad paskiem.
+- **Liczby są białe.** Wszystkie liczby danych (Liczba, Liczba szeroki, Wyliczenie, Wykres, Pasek wskaźników) mają kolor tekst/tytul, bo wyróżnia je rozmiar. Limonka zostaje dla kresek, etykiet, ikon, odznak, „+”, „//” i numeru przekładki.
+- **Wyrównanie do prawej krawędzi.** Grafika lub wykres w prawej kolumnie kończy się na prawym marginesie (x=1792), tak samo jak tabela nad nią lub pod nią.
+- **Jednakowe odstępy między akapitami** w całym slajdzie (we wszystkich kolumnach i boxach); mniejszy odstęp wewnątrz sekcji (nagłówek–akapit), większy między sekcjami.
 - **Niepełny ostatni rząd boxów** (np. 5 kart jako 3 + 2) ma boxy o tej samej szerokości co rzędy wyżej i jest wyśrodkowany w poziomie. Nie rozciągaj go na całą szerokość.
 - **Boxy nie są rozciągane**, żeby wypełnić obszar. Box ma wysokość naturalną. Boxy w jednym rzędzie mają jednakową wysokość (najwyższego z nich).
 - **Wyrównanie w pionie:** blok treści niższy niż 70% obszaru (poniżej ok. 431 px) wyśrodkuj w pionie względem obszaru treści. Blok wyższy trzymaj od góry (y=304). Środek geometryczny, bez korekt optycznych; osoba tworząca może sama poprosić o przesunięcie.
