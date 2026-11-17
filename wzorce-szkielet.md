@@ -1,6 +1,6 @@
 # Wzorce: szkielet slajdu
 
-meta/wersja: **2026-11-17.1**
+meta/wersja: **2026-11-17.2**
 
 Szkielet: rama slajdu treści, nagłówek, stopka, okładka, przekładka. Tokeny (kolory, wymiary, typografia, odstępy, model pudełkowy) są w pliku indeksu `prezentacje-v1.md`.
 
@@ -123,4 +123,4 @@ Kiedy: układy z paskiem wskaźników (pas stopki idzie zaraz za tłem smug, prz
 
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-17.1)
+KONIEC PLIKU (meta/wersja 2026-11-17.2)

@@ -1,6 +1,6 @@
 # Wzorce: elementy (atomy i molekuły)
 
-meta/wersja: **2026-11-17.1**
+meta/wersja: **2026-11-17.2**
 
 Atomy i molekuły: ikony, punktor, odznaka, karta szklana, ramki zdjęć, karty, ściana logo, wiersze list i tabel. Tokeny są w pliku indeksu `prezentacje-v1.md`.
 
@@ -279,4 +279,4 @@ Kolumnę schematu układaj jako `display:flex;flex-direction:column;align-items:
 
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-17.1)
+KONIEC PLIKU (meta/wersja 2026-11-17.2)

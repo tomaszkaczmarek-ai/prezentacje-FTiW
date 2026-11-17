@@ -1,6 +1,6 @@
 # Wzorce: układy treści
 
-meta/wersja: **2026-11-17.1**
+meta/wersja: **2026-11-17.2**
 
 Boxy danych, tabele, pasek wskaźników i układy złożone. Tokeny są w pliku indeksu `prezentacje-v1.md`, elementy (atomy i molekuły) w `wzorce-elementy.md`, szkielet w `wzorce-szkielet.md`.
 
@@ -242,4 +242,4 @@ Sekcja: szablon z „Sekcja tekstowa” (plik elementów).
 
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-17.1)
+KONIEC PLIKU (meta/wersja 2026-11-17.2)
