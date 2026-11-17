@@ -1,8 +1,8 @@
 # Design system prezentacji
 
-meta/wersja: **2026-11-17.2**
+meta/wersja: **2026-11-17.3**
 
-meta/zmiana: Nowa sekcja „Ocena z perspektywy klienta” (po budowie, tylko dla slajdów wątpliwych: co mówi slajd, czy jest zrozumiały bez sąsiednich, jakie pytanie zada klient; wynik w raporcie). Nowa sekcja „Konspekt” (przed budową, tylko przy dzieleniu treści lub ogólnym briefie: tytuł i opis ok. 300 znaków na slajd, zatwierdzenie, rozbieżności w raporcie); akapit wprowadzający bez boxu. Wcześniej: Ściana logo: rozmiar logo dobierany optycznie (tabela w wzorcu, wysokie logo większe), przycięte marginesy w SVG Superfund i PZU. Wcześniej: Do biblioteki dodane logo Caspar (Asset Management i TFI, wersje dark i light) oraz folder logo-ftiw (logo FTiW poziome i pionowe, kolorowe i białe). Wcześniej: Z uwag w Figmie: liczby białe, Box Tekst z etykietą zwykłymi literami i wyrównanymi akapitami, Box z logo wyśrodkowany, Pasek wskaźników z liczbami na jednej linii, wzorzec Zamknięcie, reguły wyrównania do prawej i odstępów. Wcześniej: Przekładka z równą ciemną warstwą na zdjęciu (tlo/przekladka). Niepełny ostatni rząd boxów o tej samej szerokości i wyśrodkowany; Rząd z „+” bez opisów w źródle zostaje z małymi kartami. Wcześniej: Box z logo, Box Liczba szeroki (zamiast pasa przy jednej liczbie), Sekcje w dwóch kolumnach (rola Tekst opisowy), wyśrodkowany tekst w kartach diagramu cyklu, wykres jako obraz skalowany do obszaru. Wcześniej: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
+meta/zmiana: Nowa sekcja „Raport końcowy” (odpowiedź po generowaniu: decyzje podjęte za użytkownika, tylko slajdy do poprawy, zdanie o pozostałych; bez konspektu i bez ocen „ok”). Wcześniej: Nowa sekcja „Ocena z perspektywy klienta” (po budowie, tylko dla slajdów wątpliwych: co mówi slajd, czy jest zrozumiały bez sąsiednich, jakie pytanie zada klient; wynik w raporcie). Nowa sekcja „Konspekt” (przed budową, tylko przy dzieleniu treści lub ogólnym briefie: tytuł i opis ok. 300 znaków na slajd, zatwierdzenie, rozbieżności w raporcie); akapit wprowadzający bez boxu. Wcześniej: Ściana logo: rozmiar logo dobierany optycznie (tabela w wzorcu, wysokie logo większe), przycięte marginesy w SVG Superfund i PZU. Wcześniej: Do biblioteki dodane logo Caspar (Asset Management i TFI, wersje dark i light) oraz folder logo-ftiw (logo FTiW poziome i pionowe, kolorowe i białe). Wcześniej: Z uwag w Figmie: liczby białe, Box Tekst z etykietą zwykłymi literami i wyrównanymi akapitami, Box z logo wyśrodkowany, Pasek wskaźników z liczbami na jednej linii, wzorzec Zamknięcie, reguły wyrównania do prawej i odstępów. Wcześniej: Przekładka z równą ciemną warstwą na zdjęciu (tlo/przekladka). Niepełny ostatni rząd boxów o tej samej szerokości i wyśrodkowany; Rząd z „+” bez opisów w źródle zostaje z małymi kartami. Wcześniej: Box z logo, Box Liczba szeroki (zamiast pasa przy jednej liczbie), Sekcje w dwóch kolumnach (rola Tekst opisowy), wyśrodkowany tekst w kartach diagramu cyklu, wykres jako obraz skalowany do obszaru. Wcześniej: Nowe wzorce: Diagram cyklu, Opis i grafika, Grafiki z podpisem (role Cykl, Opis i grafika, Grafiki z podpisem), cztery ikony strzałek. Przebudowa na system: zasady nadrzędne, katalog ról slajdów, procedura decyzyjna, pytania do użytkownika z opisem skutków, lista potrzebnych wzorców. Plik wzorców rozbity na trzy pliki (szkielet, układy, elementy). Wcześniej (2026-11-04.15): szablony odporne na model pudełkowy, rząd z operatorem „+”, ściana logo, przekładka, molekuły, szerokie boxy. Punkt powrotu: gałąź punkt-powrotu-2026-11-04-15.
 
 Ten plik jest indeksem i jedynym źródłem zasad oraz tokenów wyglądu (kolory, wymiary, typografia, odstępy). Szablony HTML wzorców są w trzech plikach z sekcji „Pliki wzorców”. Wartości przepisuj dosłownie, niczego nie zaokrąglaj i nie dopisuj.
 
@@ -49,7 +49,7 @@ Role bez wzorca: patrz „Potrzebne wzorce”.
 4. **Przy wątpliwości zapytaj użytkownika, jeśli jest obecny.** Wątpliwość to sytuacja, w której dwa wzorce lub dwa sposoby pokazania elementu są równie dobre albo zmiana ze źródła byłaby istotna (np. zamiana zdjęć na ikony, jeden wskaźnik: pas czy box, tytuł za długi). Zapytaj jednym pytaniem z 2–3 opcjami. Każda opcja ma nazwę, jedno zdanie opisu wyglądu, co użytkownik zyskuje i co traci; opcja domyślna jest oznaczona i pierwsza. Przykład: „Jedna liczba obok kart: A) Box Liczba szeroki pod kartami (domyślnie; liczba jest wyraźna i spójna z kartami), B) box Liczba jako kolejna karta w rzędzie (równy rząd, ale liczba jest mała i traci na wadze)”. Pas wskaźników nie jest opcją przy jednej liczbie. Pytaj raz na typ decyzji w prezentacji i stosuj odpowiedź do pozostałych takich slajdów. Gdy użytkownika nie ma (praca zaplanowana lub bez odpowiedzi), użyj opcji domyślnej i wpisz decyzję do raportu.
 5. **Sugestie.** Jeśli widzisz lepszy sposób pokazania treści (zdjęcia stockowe niosące niewiele treści zamień na ikony; dwa slajdy, które mogłyby być jednym; za długi tytuł), napisz to w raporcie jako propozycję z opisem skutku. Niczego z tego nie rób bez zgody użytkownika.
 6. **Zbuduj slajdy zgodnie z wzorcami i tokenami**, a wzorce pobieraj z plików wskazanych w rolach (sekcja „Pliki wzorców”).
-7. **Raport zgodności:** wersja design systemu, rola i użyty wzorzec każdego slajdu, droga (wzorzec domyślny, złożony z molekuł lub odtworzony ze źródła), elementy źródła, które trafiły na slajd (i te, które nie, z powodem), odstępstwa, sugestie, lista skróceń, brakujące wzorce, rozbieżności (decyzje podjęte bez jednoznacznej odpowiedzi użytkownika: co wybrano, jakie były opcje, co to zmienia), ocena klienta (sekcja „Ocena z perspektywy klienta”).
+7. **Raport zgodności:** wersja design systemu, rola i użyty wzorzec każdego slajdu, droga (wzorzec domyślny, złożony z molekuł lub odtworzony ze źródła), elementy źródła, które trafiły na slajd (i te, które nie, z powodem), odstępstwa, sugestie, lista skróceń, brakujące wzorce, rozbieżności (decyzje podjęte bez jednoznacznej odpowiedzi użytkownika: co wybrano, jakie były opcje, co to zmienia), ocena klienta (sekcja „Ocena z perspektywy klienta”). Forma odpowiedzi końcowej: sekcja „Raport końcowy”.
 
 ## Konspekt (spójność wypowiedzi)
 
@@ -68,7 +68,16 @@ Przeczytaj taki slajd jak klient: tylko jego tekst i grafikę, bez źródła i b
 2. Czy da się go zrozumieć bez sąsiednich slajdów i czy pasuje do kolejności?
 3. Jakie pytanie zada klient po jego przeczytaniu?
 
-Wynik trafia do raportu w sekcji „Ocena klienta”: do trzech linii na slajd i werdykt „ok” lub „do poprawy” z propozycją zmiany. Slajdów ocenionych jako „ok” nie opisujesz, podaj tylko liczbę sprawdzonych. Niczego nie poprawiasz bez zgody użytkownika (zasada sugerowania).
+Wynik trafia do raportu tylko jako lista slajdów „do poprawy”: numer, jedno zdanie dlaczego (jakie pytanie zada klient), propozycja zmiany. Slajdów ocenionych jako „ok” nie wymieniasz, nie podajesz ich liczby i nie piszesz, że były uznane za wątpliwe ani dlaczego ocena została uruchomiona. Niczego nie poprawiasz bez zgody użytkownika (zasada sugerowania).
+
+## Raport końcowy (odpowiedź po wygenerowaniu)
+
+Odpowiedź po zbudowaniu prezentacji ma trzy części, w tej kolejności:
+1. Jedno zdanie: liczba slajdów i wersja design systemu.
+2. „Decyzje podjęte za Ciebie”: krótka lista rozbieżności względem źródła (skrócenia, zmiany kolejności, brakujące elementy, użyte zamienniki, zastosowane najbliższe wzorce). Bez powtarzania konspektu i bez opisu, co jest na slajdach.
+3. „Slajdy do poprawy”: tylko slajdy z oceny klienta, które jej nie przeszły. Gdy takich nie ma, ta część to tylko zdanie z punktu poniżej.
+
+Na końcu jedno zdanie: „Pozostałe slajdy nie budzą moich zastrzeżeń.” Pełny raport zgodności (rola i wzorzec każdego slajdu, elementy źródła, lista skróceń, brakujące wzorce) podajesz tylko na prośbę użytkownika.
 
 ## Pliki wzorców
 
@@ -209,4 +218,4 @@ W Claude Slides `width` i `height` obejmują padding i ramkę (potwierdzone na w
 
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-17.2)
+KONIEC PLIKU (meta/wersja 2026-11-17.3)
