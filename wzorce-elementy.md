@@ -1,6 +1,6 @@
 # Wzorce: elementy (atomy i molekuły)
 
-meta/wersja: **2026-11-05.2**
+meta/wersja: **2026-11-17.1**
 
 Atomy i molekuły: ikony, punktor, odznaka, karta szklana, ramki zdjęć, karty, ściana logo, wiersze list i tabel. Tokeny są w pliku indeksu `prezentacje-v1.md`.
 
@@ -212,7 +212,7 @@ Pojemność: w rzędzie po 3 (padding 40) pozycja ma 33 znaki w linii; w rzędzi
 
 ### Ściana logo partnerów
 
-Kiedy: lista partnerów, dystrybutorów lub towarzystw (do 20 logo). Pola: logo z biblioteki (poniżej), nadtytuł i tytuł nagłówka. Logo bierz z biblioteki, nie z pamięci; logo spoza biblioteki wgraj od użytkownika. Kolejność alfabetyczna, chyba że brief mówi inaczej. Pięć kafli w rzędzie, ostatni niepełny rząd wyśrodkowany. Kafel 307×112 (logo w polu 227×64, object-fit contain, wyśrodkowane, promień 14, tło tlo/kafelek-logo), odstęp 32. Rzędy: 1–5 logo 1 rząd, 6–10 dwa, 11–15 trzy, 16–20 cztery (wysokość 544). Więcej niż 20: zgłoś i zapytaj. Cała ściana jest blokiem w obszarze treści (sekcja „Odstępy i obszar treści”), wyśrodkowanym w pionie.
+Kiedy: lista partnerów, dystrybutorów lub towarzystw (do 20 logo). Pola: logo z biblioteki (poniżej), nadtytuł i tytuł nagłówka. Logo bierz z biblioteki, nie z pamięci; logo spoza biblioteki wgraj od użytkownika. Kolejność alfabetyczna, chyba że brief mówi inaczej. Pięć kafli w rzędzie, ostatni niepełny rząd wyśrodkowany. Kafel 307×112 (promień 14, tło tlo/kafelek-logo), odstęp 32. Logo jest wyśrodkowane w kaflu i ma własny rozmiar dobrany optycznie (tabela niżej), żeby wysokie logo (Allianz, VIG, Quercus, Franklin Templeton) nie wyglądały na małe obok szerokich. Rzędy: 1–5 logo 1 rząd, 6–10 dwa, 11–15 trzy, 16–20 cztery (wysokość 544). Więcej niż 20: zgłoś i zapytaj. Cała ściana jest blokiem w obszarze treści (sekcja „Odstępy i obszar treści”), wyśrodkowanym w pionie.
 
 Adres logo: `https://raw.githubusercontent.com/tomaszkaczmarek-ai/ds-assets/main/logo-partnerow/{plik}.svg`. Pliki: allianz, blackrock, caspar, erste-tfi, esaliens, fidelity-international, franklin-templeton, generali-investments, ing, investors-tfi, ipopema, pzu-inwestycje, quercus, rockbridge, schroders, skarbiec, superfund, uniqa, vig-c-quadrat, caspar-asset-management-dark, caspar-asset-management-light, caspar-tfi-dark, caspar-tfi-light. Wersja „dark” (ciemne litery) jest na biały kafelek, wersja „light” (białe litery) na ciemne tło; na kafelku zawsze „dark”.
 
@@ -222,10 +222,12 @@ Logo FTiW (stopka, okładka, zamknięcie, kafelek): `https://raw.githubuserconte
 <div style="display:flex;flex-direction:row;justify-content:center;gap:32px">{KAFLE}</div>
 ```
 
-Kafel:
+Rozmiar logo w kaflu (szerokość × wysokość w px, proporcje pliku zachowane): allianz 140×88, blackrock 267×43, caspar-asset-management-dark 191×70, caspar-tfi-dark 191×70, erste-tfi 188×71, esaliens 267×48, fidelity-international 205×65, franklin-templeton 165×81, generali-investments 243×55, ing 226×59, investors-tfi 215×62, ipopema 241×55, pzu-inwestycje 189×70, quercus 165×81, rockbridge 239×56, schroders 262×51, skarbiec 257×52, superfund 209×64, uniqa 225×59, vig-c-quadrat 89×88. Wersje „dark” i „light” Caspar mają ten sam rozmiar; stary plik caspar.svg nie jest używany na ścianie. Logo spoza biblioteki: proporcje p = szerokość/wysokość pliku, wysokość h = min(88; pierwiastek z (13350 / p)), szerokość w = h × p; gdy w > 267, przyjmij w = 267 i h = 267 / p. Pliki w bibliotece mają przycięte marginesy do zawartości (viewBox), więc rozmiar nie zawiera pustego pola.
+
+Kafel (szerokość i wysokość logo z tabeli):
 
 ```html
-<div style="width:307px;height:112px;background:[[tlo/kafelek-logo]];border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="{logo}" alt="{nazwa}" style="width:227px;height:64px;object-fit:contain"></div>
+<div style="width:307px;height:112px;background:[[tlo/kafelek-logo]];border-radius:14px;display:flex;align-items:center;justify-content:center"><img src="{logo}" alt="{nazwa}" style="width:{szerokość}px;height:{wysokość}px;object-fit:contain"></div>
 ```
 
 ### Wiersz składnika
@@ -277,4 +279,4 @@ Kolumnę schematu układaj jako `display:flex;flex-direction:column;align-items:
 
 ---
 
-KONIEC PLIKU (meta/wersja 2026-11-05.2)
+KONIEC PLIKU (meta/wersja 2026-11-17.1)
